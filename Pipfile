@@ -7,6 +7,8 @@ name = "pypi"
 django = "*"
 
 [dev-packages]
+pylint = "*"
+pycodestyle = "*"
 
 [requires]
 python_version = "3.7"
