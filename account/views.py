@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.views.generic import TemplateView
+
+
+class AccountViewExample(TemplateView):
+    template_name = 'account/signup.html'
