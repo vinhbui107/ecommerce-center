@@ -4,7 +4,6 @@ MovieCenter/settings.py
 *.pot
 *.pyc
 __pycache__/
-local_settings.py
 media
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
@@ -167,7 +166,7 @@ dmypy.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
+.idea
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
