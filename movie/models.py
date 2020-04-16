@@ -4,7 +4,7 @@ from django.utils.text import slugify
 
 class Actor(models.Model):
     name = models.CharField(max_length=30)
-    photo = models.CharField(max_length=50)
+    photo = models.CharField(default='No photo', max_length=50)
 
     def __str__(self):
         return self.name
