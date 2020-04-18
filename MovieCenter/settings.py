@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'movie',
+    'widget_tweaks',
+    'captcha',
+
 ]
 
 MIDDLEWARE = [
@@ -124,8 +127,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 AUTH_USER_MODEL = 'account.CustomerUser'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'lethienbao3012@gmail.com'
+EMAIL_HOST_PASSWORD = 'nguyenngocphuong1'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'MovieCenter <noreply@MovieCenter.com>'
