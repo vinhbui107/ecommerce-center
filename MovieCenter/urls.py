@@ -10,4 +10,5 @@ urlpatterns = [
     path('checkout/', include('checkout.urls')),
     path('account/', include('account.urls')),
     path('account/', include('django.contrib.auth.urls')),
+    path('captcha/', include('captcha.urls')),
 ]
