@@ -11,7 +11,7 @@ urlpatterns = [
     path('signup/', views.signup, name="signup"),
     path('password_change_done/', views.password_change_done, name="done"),
     path('password_change_fail/', views.password_change_fail, name="fpass"),
-    url(r'^password/$', views.change_password, name='change_password'),
+    # url(r'^password/$', views.change_password, name='change_password'),
 
     path('password-reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('password-reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),

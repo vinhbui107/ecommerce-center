@@ -3,7 +3,7 @@ import re
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import get_user_model
-from captcha.fields import CaptchaField
+# from captcha.fields import CaptchaField
 
 User = get_user_model()
 
@@ -13,7 +13,7 @@ class RegistrationForm(forms.Form):
     email = forms.EmailField(label='Email')
     password1 = forms.CharField(label='Mật khẩu', widget=forms.PasswordInput())
     password2 = forms.CharField(label='Nhập lại mật khẩu', widget=forms.PasswordInput())
-    captcha = CaptchaField(label='Captcha:')
+    # captcha = CaptchaField(label='Captcha:')
 
     def clean_password2(self):
         if 'password1' in self.cleaned_data:

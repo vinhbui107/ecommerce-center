@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'checkout',
     'movie',
     'widget_tweaks',
-    'captcha',
+    # 'captcha',
 
 ]
 
