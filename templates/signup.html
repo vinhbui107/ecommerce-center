@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+    Sign Up
+{% endblock title %}
+
+{% block content %}
+  <div class="text-center pt-5">
+      <h1 class="display-4">SIGN UP</h1>
+      <p class="lead text-muted">Please fill all data in form to create a new account.</p>
+  </div>
+  <form action="{% url 'signup' %}" method="post" style="max-width: 420px; margin: auto;">
+      {% csrf_token %}
+      <div class="form-group">
+          <label for="">Username</label>
+          {% render_field form.username class="form-control" placeholder="username" %}
+      </div>
+      <div class="form-group">
+          <label for="">Email</label>
+          {% render_field form.email class="form-control" placeholder="name@gmail.com" %}
+      </div>
+      <div class="form-group">
+          <label for="">Phone Number</label>
+          {% render_field form.phone_number class="form-control" placeholder="0123456789" %}
+      </div>
+      <div class="form-group">
+          <label for="">Your Address</label>
+          {% render_field form.address class="form-control" placeholder="Example: Ho Chi Minh City,..." %}
+      </div>
+      <div class="form-group">
+          <label for="">Password</label>
+          {% render_field form.password1 class="form-control" %}
+      </div>
+      <div class="form-group">
+          <label for="">Confirm your password</label>
+          {% render_field form.password2 class="form-control" %}
+      </div>
+      <button class="btn btn-lg btn-success" type="submit">Sign Up</button>
+      <p class="mt-3">
+          Did you have an account ? <a href="{% url 'login' %}">Login</a>
+      </p>
+  </form>
+{% endblock content %}

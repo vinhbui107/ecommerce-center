@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Contact Us | Movie Center
+{% endblock title %}
+
+{% block cssblock %}
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-------- your HEAD tag ---------->
+
+  <!------------>
+  <link href="Contact.css" rel="stylesheet" media="screen,print" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+
+  <!-------VVVVVVVVVVVV----->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+    integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+{% endblock cssblock %}
+
+
+{% block content %}
+    <!------VVVVVVVVVVVV------>
+    <title>Form</title>
+
+
+    <section class="relative text-center">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 class="separator"><small>GET IN TOUCH</small></h1>
+                <span class="font-weight-bold">CONTACT INFORMATION</span>
+            </div>
+        </div>
+    </section>
+
+    <nav aria-label="breadcrumb" class="bg-light section-xl">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+        </ol>
+    </nav>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-8 ">
+            <section class="part section section-inset-1">
+                <div class="container">
+                    <h2 class="sigin">CONTACT US</h2>
+                    <hr>
+                    <!--------Các ô điền mẫu------->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="name" class="form-control" placeholder="Your first name...">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="email" id="email" class="form-control" placeholder="Your last name...">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="website" class="form-control" placeholder="Your e-mail..."></div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" id="address" class="form-control" placeholder="Your phone...">
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="textarea-message form-group">
+                <textarea id="message" class="textarea-message form-control" placeholder="Message: "
+                          rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-----Cac ô điền mẫu-->
+                    <!------>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-xl-8 ">
+                            <div class="row justify-content-center offset-custom-5">
+                                <div class="col-xl-6 col-xl offset-custom-3">
+                                    <div class="text-center">
+                                        <button class="btn btn-danger SI" type="submit">SEND MESSAGE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <!---------Bieu tuong------>
+                    <section id="contact">
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="card border-0">
+                                    <div class="card-body text-center">
+                                        <i class="fa fa-map-marker fa-5x mb-3" aria-hidden="true"></i>
+
+                                        <h4>Post Address</h4>
+                                        <p>The Company Name Inc. 9863 - 9867 Mill </p>
+                                        <p>Mill Road, Cambridge, MG09 99HT.</p>
+                                    </div>
+                                </div>
+
+                                <div class="card border-0">
+                                    <div class="card-body text-center">
+                                        <i class="fa fa-phone fa-5x mb-3" aria-hidden="true"></i>
+                                        <h4>Phone</h4>
+                                        <p>Phone: +1 800 603 6035</p>
+                                        <p>FAX: +1 800 889 9898</p>
+                                    </div>
+                                </div>
+                                <div class="card border-0">
+                                    <div class="card-body text-center">
+                                        <i class="fa fa-globe fa-5x mb-3" aria-hidden="true"></i>
+                                        <h4>Email</h4>
+                                        <p>AnToanBMTTmail@demolink.org</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block jsblock %}
+
+{% endblock jsblock %}

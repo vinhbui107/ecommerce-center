@@ -1,4 +1,36 @@
-<!-- header -->
-<header>
-  <p>Hello form header</p>
-</header>
+<nav class="navbar navbar-dark bg-dark navbar-expand-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      {% comment %} <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/logo_white.png" width="30" height="30" alt="logo"> {% endcomment %}
+      BootstrapBay
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-11" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-list-11">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cart</a>
+        </li>
+        <li class="nav-item">
+          {% if user.is_authenticated %}
+            <p>
+              <a class="nav-link" href="#">{{ user.username }}</a>|<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </p>
+          {% else %}
+            <a class="nav-link" href="{% url 'login' %}">Sign In</a>
+          {% endif %}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
