@@ -10,17 +10,19 @@ from .forms import (
     SignUpForm,
     UpdateProfileForm
 )
+from django.urls import reverse_lazy
+from django.views import generic
 
 
 def profile(request):
     user = request.user
     if request.method == 'POST':
-        form = UpdataProfileForm(request.POST, instance=user, files=request.FILES)
+        form = UpdateProfileForm(request.POST, instance=user, files=request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/account/successprofile')
     else:
-        form = UpdataProfileForm(instance=user)
+        form = UpdateProfileForm(instance=user)
 
     return render(request, "account/profile.html", {'form': form})
 
@@ -33,13 +35,14 @@ class SiteLoginView(LoginView):
     template_name = "account/login.html"
 
 
-class SiteSignupView(FormView):
+class SiteSignupView(generic.CreateView):
     template_name = 'account/signup.html'
     form_class = SignUpForm
+    success_url = reverse_lazy('login')
 
-    def form_valid(self, form):
+    '''def form_valid(self, form):
         data = form.cleaned_data
-        from pprint import pprint; pprint(data)
+        from pprint import pprint; pprint(data)'''
 
 
 class UpdateProfileView():
