@@ -3,25 +3,24 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
-from .forms import RegisterForm
 from django.contrib.auth.forms import PasswordChangeForm
 from django.views.generic import FormView
 from .forms import (
     LoginForm,
-    RegisterForm,
+    SignUpForm,
+    UpdateProfileForm
 )
-from .forms import CustomUserUpdateForm
 
 
 def profile(request):
     user = request.user
     if request.method == 'POST':
-        form = CustomUserUpdateForm(request.POST, instance=user, files=request.FILES)
+        form = UpdataProfileForm(request.POST, instance=user, files=request.FILES)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/account/successprofile')
     else:
-        form = CustomUserUpdateForm(instance=user)
+        form = UpdataProfileForm(instance=user)
 
     return render(request, "account/profile.html", {'form': form})
 
@@ -36,23 +35,33 @@ class SiteLoginView(LoginView):
 
 class SiteSignupView(FormView):
     template_name = 'account/signup.html'
-    form_class = RegisterForm
+    form_class = SignUpForm
+
+    def form_valid(self, form):
+        data = form.cleaned_data
+        from pprint import pprint; pprint(data)
 
 
-# class EditProfileView():
-#     pass
-#
+class UpdateProfileView():
+    pass
 
-# def signup(request):
-#     form = UserSignUpForm()
-#     if request.method == "POST":
-#         form = UserSignUpForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect("/")
-#     return render(request, "account/signup.html", {"form": form})
-#
-#
+
+class UpdateProfileDoneView():
+    pass
+
+
+class ChangePasswordView():
+    pass
+
+
+class ChangePasswordDoneView():
+    pass
+
+
+class ChangePasswordFailView():
+    pass
+
+
 # def change_password(request):
 #     if request.method == "POST":
 #         form = PasswordChangeForm(request.user, request.POST)

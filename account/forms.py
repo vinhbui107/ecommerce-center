@@ -15,22 +15,16 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class CustomUserUpdateForm(forms.ModelForm):
-    class Meta:
-        model = get_user_model()
-        fields = ('first_name', 'last_name', 'email', 'address', 'phone_number')
-
-
 class LoginForm(forms.Form):
     pass
 
 
-class RegisterForm(UserCreationForm):
+class SignUpForm(UserCreationForm):
     email = forms.EmailField(required=True)
 
     class Meta:
-        model = CustomerUser
-        fields = ('username', 'email', 'phone_number', 'address')
+        model = User
+        fields = ('username', 'email', )
         field_classes = {'username': UsernameField}
 
     # username = forms.CharField(label="Username", max_length=30)
@@ -67,7 +61,12 @@ class RegisterForm(UserCreationForm):
     #         password=self.cleaned_data["password1"],
     #     )
 
-# class ChangePasswordForm()
-#
-# class UpdateProfileForm(forms.Form):
-#     pass
+
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ('first_name', 'last_name', 'email', 'address', 'phone_number')
+
+
+class ChangePasswordForm():
+    pass
