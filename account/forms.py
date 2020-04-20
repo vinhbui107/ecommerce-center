@@ -24,7 +24,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ('username', 'email', )
+        fields = ('username', 'email', 'address', 'phone_number')
         field_classes = {'username': UsernameField}
 
     # username = forms.CharField(label="Username", max_length=30)
