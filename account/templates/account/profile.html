@@ -1,0 +1,24 @@
+{% load widget_tweaks %}
+
+<form method="post" action=".">
+  {% csrf_token %}
+
+  <label>Họ</label>
+  {% render_field form.first_name class="form-control" %}
+
+  <label>Tên</label>
+  {% render_field form.last_name class="form-control" %}
+
+  <label>Email</label>
+  {% render_field form.email class="form-control" %}
+
+  <label>Địa chỉ</label>
+  {% render_field form.address class="form-control" %}
+
+  <label>phoen</label>
+  {% render_field form.phone_number class="form-control" %}
+
+  <button class="btn btn-primary btn-lg btn-block" type="submit">
+    Cập nhật
+  </button>
+</form>

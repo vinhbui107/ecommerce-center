@@ -8,8 +8,26 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.views.generic import FormView
 from .forms import (
     LoginForm,
-    RegisterForm
+    RegisterForm,
 )
+from .forms import CustomUserUpdateForm
+
+
+def profile(request):
+    user = request.user
+    if request.method == 'POST':
+        form = CustomUserUpdateForm(request.POST, instance=user, files=request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/account/successprofile')
+    else:
+        form = CustomUserUpdateForm(instance=user)
+
+    return render(request, "account/profile.html", {'form': form})
+
+
+def successprofile(request):
+    return render(request, "account/successprofile.html")
 
 
 class SiteLoginView(LoginView):

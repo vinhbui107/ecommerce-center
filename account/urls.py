@@ -2,12 +2,14 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
-
+from .import views
 app_name = "account"
 
 urlpatterns = [
     # path("password_change_done/", views.password_change_done, name="done"),
     # path("password_change_fail/", views.password_change_fail, name="fpass"),
+    path('profile/', views.profile, name='profile'),
+    path('successprofile/', views.successprofile, name='successprofile'),
     path(
         "password-reset/", auth_views.PasswordResetView.as_view(), name="password_reset"
     ),

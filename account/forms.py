@@ -12,8 +12,13 @@ from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from .models import CustomerUser
 from django.contrib.auth import get_user_model
-
 User = get_user_model()
+
+
+class CustomUserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = get_user_model()
+        fields = ('first_name', 'last_name', 'email', 'address', 'phone_number')
 
 
 class LoginForm(forms.Form):
@@ -27,7 +32,6 @@ class RegisterForm(UserCreationForm):
         model = CustomerUser
         fields = ('username', 'email', 'phone_number', 'address')
         field_classes = {'username': UsernameField}
-
 
     # username = forms.CharField(label="Username", max_length=30)
     # email = forms.EmailField(label="Email")
