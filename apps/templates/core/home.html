@@ -1,0 +1,274 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+{% endblock cssblock %}
+
+{% block title %}
+    Movie Center | The best website in the world.
+{% endblock title %}
+
+{% block content %}
+    <section class="movieCarousel">
+        <div class="carousel_background"></div>
+        <div id="movieCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#movieCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#movieCarousel" data-slide-to="1"></li>
+                <li data-target="#movieCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{% static 'img/joker-sider.jpg' %}"
+                                 class="d-block w-100" alt="...">
+
+                            <a href="#">IT 2017</a>
+                            <p>2017, USA, Drama, Horror</p>
+
+                        </div>
+                        <div class="col-6">
+                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100" alt="...">
+
+                            <a href="#">IT 2017</a>
+                            <p>2017, USA, Drama, Horror</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100"
+                                 alt="...">
+
+                            <a href="#">IT 2017</a>
+                            <p>2017, USA, Drama, Horror</p>
+
+                        </div>
+                        <div class="col-6">
+                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100" alt="...">
+
+                            <a href="#">IT 2017</a>
+                            <p>2017, USA, Drama, Horror</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100" alt="...">
+
+                            <a href="#">IT 2017</a>
+                            <p>2017, USA, Drama, Horror</p>
+
+                        </div>
+                        <div class="col-6">
+                            <img src="{% static 'img/joker-sider.jpg' %}"
+                                 class="d-block w-100" alt="...">
+
+                            <a href="#">IT 2017</a>
+                            <p>2017, USA, Drama, Horror</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="movieList">
+        <h1 class="text-center text-black">Watch Movie Online</h1>
+        <hr>
+        <div class="btn--background text-center">
+            <button type="button" class="btn btn-danger btn-lg">Top Rate</button>
+            <button type="button" class="btn btn-primary btn-lg btn--hover">New Releases</button>
+            <button type="button" class="btn btn-primary btn-lg btn--hover">Comming Soon</button>
+        </div>
+        <div class="container">
+            <div class="row movielist-item">
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+            </div>
+
+            <div class="row movielist-item">
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
+                    <h4>Mắt Biếc</h4>
+                    <p>Việt nam</p>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <p class="dollar font-weight-bold">$3.49</p>
+                    <span><a href="#">BUY MOVIE</a></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="comingSoon">
+        <div class="overlay_black"></div>
+        <div class="comingSoon_content container">
+            <h2>COMING SOON</h2>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <h3>DEADPOOL 2</h3>
+                    <span>Action</span>
+                    <span>Comedy</span>
+                    <span>Adventure</span>
+                    <div>
+            <span>
+              <i class="fa fa-calendar-alt"></i>
+              30 September, 2020
+            </span>
+                    </div>
+                    <p>
+                        After losing Vanessa (Morena Baccarin), the love of his life, 4th-wall breaking mercenary Wade
+                        Wilson aka
+                        Deadpool (Ryan Reynolds) must assemble a team and protect a young, full-figured mutant Russell
+                        Collins aka
+                        Firefist (Julian Dennison) from Cable (Josh Brolin).
+                    </p>
+                    <p>
+                        Director:
+                        <span>David Leitch</span>
+                    </p>
+                    <p>
+                        Writers:
+                        <span>Rhett Reese, Paul Wernick</span>
+                    </p>
+                    <p>
+                        Stars:
+                        <span> Ryan Reynolds, Josh Brolin, Morena Baccarin</span>
+                    </p>
+
+                </div>
+                <div class="col-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/D86RtevtfrA" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
+                <div class="btn-coming">
+                    <button type="button" class="btn btn-danger">More Info</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="newsletter">
+        <div class="overlay_black"></div>
+        <div class="newsletter_content ">
+            <h2>NEWSLETTER</h2>
+            <hr>
+            <h5 class="text-center text-white">Enter your email address to receive all news,updates on new </h5>
+            <h5 class="text-center text-white">
+                arrivals,special offers and other discount information.
+            </h5>
+            <input class="input_mail" type="email" placeholder="Your Email..">
+            <button type="button" class="btn btn-outline-danger button_sub">SUBSCRIBE</button>
+
+        </div>
+    </section>
+{% endblock content %}
+
+
+{% block jsblock %}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+{% endblock jsblock %}

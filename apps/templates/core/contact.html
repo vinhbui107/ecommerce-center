@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Contact Us | Movie Center
+{% endblock title %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock cssblock %}
+
+
+{% block content %}
+
+    <section class="relative text-center">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 class="separator"><small>GET IN TOUCH</small></h1>
+                <span class="font-weight-bold">CONTACT INFORMATION</span>
+            </div>
+        </div>
+    </section>
+
+    <nav aria-label="breadcrumb" class="bg-light section-xl">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Contact</li>
+        </ol>
+    </nav>
+
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-8 ">
+            <section class="part section section-inset-1">
+                <div class="container">
+                    <h2 class="sigin">CONTACT US</h2>
+                    <hr>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-8">
+                            <form class="rd-mailform text-left" data-form-output="form-output-global"
+                                  data-form-type="forms"
+                                  method="post" action="bat/rd-mailform.php" novalidate="novalidate">
+                                <div class="row row-10">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-wrap">
+                                            <input class="form-input form-control-has-validation form-control-last-child"
+                                                   placeholder="Your first name..." id="forms-name" type="text"
+                                                   name="name"
+                                                   data-constraints="@Required"><span class="form-validation"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-wrap">
+
+                                            <input class="form-input form-control-has-validation form-control-last-child"
+                                                   placeholder="Your last name..." id="forms-last-name" type="text"
+                                                   name="last-name"
+                                                   data-constraints="@Required"><span class="form-validation"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-wrap has-error">
+
+                                            <input class="form-input form-control-has-validation form-control-last-child"
+                                                   placeholder="Your e-mail..." id="forms-email" type="email"
+                                                   name="email"
+                                                   data-constraints="@Email @Required">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-wrap has-error">
+
+                                            <input class="form-input form-control-has-validation form-control-last-child"
+                                                   placeholder="Your phone..." id="forms-phone" type="text" name="phone"
+                                                   data-constraints="@PhoneNumber @Required">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-12">
+                                        <div class="form-wrap has-error">
+
+                        <textarea class="form-input form-control-has-validation form-control-last-child"
+                                  placeholder="Message..." id="forms-message" name="message"
+                                  data-constraints="@Required"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-danger btn-lg ">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        </did>
+                    </div>
+            </section>
+            <section class="section section-inset-3">
+                <div class="container">
+                    <div class="row row-45 justify-content-xl-around text-md-left">
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <address>
+                                <div class="media flex-column flex-md-row">
+                                    <div class="media-left"><span
+                                            class="icon icon-success icon-sm fa-map-marker"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="h6">Post Address</p><span><a href="#">
+                            The Company Name Inc.9863 - 9867 Mill Road,
+                            Cambridge, MG09 99HT.</a></span>
+                                    </div>
+                                </div>
+                            </address>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <address>
+                                <div class="media flex-column flex-md-row">
+                                    <div class="media-left"><span class="icon icon-success icon-sm fa-phone"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="h6">Phone</p>
+                                        <dl class="dl-horizontal">
+                                            <dt>Phone:</dt>
+                                            <dd><a href="tel:#">+1 800 603 6035</a></dd>
+                                        </dl>
+                                        <dl class="dl-horizontal">
+                                            <dt>FAX:</dt>
+                                            <dd><a href="tel:#">+1 800 889 9898</a></dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </address>
+                        </div>
+                        <div class="col-12 col-md-6 col-xl-3">
+                            <address>
+                                <div class="media flex-column flex-md-row">
+                                    <div class="media-left"><span class="icon icon-success icon-sm fa-envelope"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <p class="h6">Email</p><a href="mailto:#">mail@demolink.org</a>
+                                    </div>
+                                </div>
+                            </address>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock content %}

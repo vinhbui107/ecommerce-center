@@ -1,0 +1,238 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    Movie Example
+{% endblock title %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static '/css/movie_detail.css' %}">
+    <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% endblock cssblock %}
+
+{% block content %}
+    <section class="section1 relative text-center">
+        <div class="jumbotron text-center">
+            <h1 class="separator"><small>FACTS & INFO</small></h1>
+            <span class="font-weight-bold">MOVIE DETAILS</span>
+        </div>
+    </section>
+
+    <section class="section2"
+    <nav aria-label="breadcrumb" class="bg-light section-xl">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+            <li class="breadcrumb-item"><a class="mau" href="#">Catalog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Movie Details</li>
+        </ol>
+    </nav>
+    </section>
+
+    <section class="section3">
+        <h2 class="TitleO">Bad Santa</h2>
+        <hr>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="col well1">
+                        <div class="row">
+                            <div class="col-sm-6"><img
+                                    src="http://image.tmdb.org/t/p/original/103KNOz11U4iojwW6F1rOKKZIDp.jpg" alt="">
+                            </div>
+                            <div class="col-sm-6">
+                                <div id="rating">
+                                    <input type="radio" id="star5" name="rating" value="5"/>
+                                    <label class="full" for="star5" title="Awesome - 5 stars"></label>
+                                    <input type="radio" id="star4half" name="rating" value="4 and a half"/>
+                                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                                    <input type="radio" id="star4" name="rating" value="4"/>
+                                    <label class="full" for="star4" title="Pretty good - 4 stars"></label>
+                                    <input type="radio" id="star3half" name="rating" value="3 and a half"/>
+                                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                                    <input type="radio" id="star3" name="rating" value="3"/>
+                                    <label class="full" for="star3" title="Meh - 3 stars"></label>
+                                    <input type="radio" id="star2half" name="rating" value="2 and a half"/>
+                                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                                    <input type="radio" id="star2" name="rating" value="2"/>
+                                    <label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+                                    <input type="radio" id="star1half" name="rating" value="1 and a half"/>
+                                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                                    <input type="radio" id="star1" name="rating" value="1"/>
+                                    <label class="full" for="star1" title="Sucks big time - 1 star"></label>
+                                    <input type="radio" id="starhalf" name="rating" value="half"/>
+                                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                                </div>
+
+                                <span class="font-weight-bold">Genre:&nbsp;<span class="font-weight-light text-danger">Comedy | Crime | Drama<br></span></span>
+                                <span class="font-weight-bold">Release year:&nbsp;<span
+                                        class="font-weight-light">2003 <br></span></span>
+                                <span class="font-weight-bold">Director:&nbsp;<span class="font-weight-light">David Beckham <br></span></span>
+                                <span class="font-weight-bold">Country:&nbsp;<span
+                                        class="font-weight-light text-danger">USA <br></span></span>
+                                <span class="font-weight-bold">Score:&nbsp;<span class="font-weight-light text-danger">7.2 <br></span></span>
+                                <p class="Cetr">A miserable conman and his partner pose as Santa and his Little Helper
+                                    to rob department stores on Christmas Eve. But they run into problems when the
+                                    conman befriends a troubled kid, and the security boss discovers the plot. <a
+                                            href="https://www.imdb.com/">See more</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <iframe width="550" height="410" src="https://www.youtube.com/embed/UUkn-enk2RU" frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-lg btn-danger"><i class="fas fa-cart-plus"></i> 63$</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section4">
+        <h2 class="TitleO">Actor Cast</h2>
+        <hr>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col col-xl-4">
+                    <div class="cast-box-media"><img
+                            src="https://livedemo00.template-help.com/wt_prod-20691/images/cast-1.jpg" alt="">
+                        <div class="cast-box-text">
+                            <h6 class="text-white">Mark Johnson</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-xl-4">
+                    <div class="cast-box-media"><img
+                            src="https://livedemo00.template-help.com/wt_prod-20691/images/cast-3.jpg" alt="">
+                        <div class="cast-box-text">
+                            <h6 class="text-white">Sam Kromstain</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-xl-4">
+                    <div class="cast-box-media"><img
+                            src="https://livedemo00.template-help.com/wt_prod-20691/images/cast-4.jpg" alt="">
+                        <div class="cast-box-text">
+                            <h6 class="text-white">Edna Barton</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section5">
+        <h2 class="TitleO">Reviews</h2>
+        <hr>
+        <div class="container">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-1"><img class="img-circle"
+                                               src="https://livedemo00.template-help.com/wt_prod-20691/images/index-13.jpg"
+                                               alt=""></
+                    <img></div>
+                <div class="col-md-10">
+                    <p><a class="float-left" href="#"><strong>Jack Wilson</strong></a>
+                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                        <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                    </p>
+                    <div class="clearfix"></div>
+                    <div class="blog-post-time text-left">
+                        <time datetime="2018-04-24" class="text-muted">April 24, 2018 at 10:46 am</time>
+                        <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the pr make but also the
+                            leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
+                            1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    </div>
+                    <p><a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i> Reply</a>
+                        <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                    </p>
+                </div>
+            </div>
+            <div class="card-inner">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div><img class="img-circle"
+                                      src="https://livedemo00.template-help.com/wt_prod-20691/images/index-12.jpg"
+                                      alt=""></div>
+                        </div>
+                        <div class="col-md-10">
+                            <p><a class="float-left" href="#"><strong>Jack Wilson</strong></a>
+                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                                <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+                            </p>
+                            <div class="clearfix"></div>
+                            <div class="blog-post-time text-left">
+                                <time datetime="2018-04-24">April 24, 2018 at 10:46 am &nbsp;</time>
+                                <span class="icon icon-success fa-reply">&nbsp; Jack Wilson</span>
+                                <pstyle
+                                ="text-align: justify;">Eu mi bibendum neque egestas. Risus quis varius quam quisque id
+                                diam vel. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit
+                                aliquam.</pstyle="text-align:>
+                            </div>
+                            <p><a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i>
+                                Reply</a>
+                                <a class="float-right btn text-white btn-danger"> <i class="fa fa-heart"></i> Like</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="section6">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h4 class="Lyc">leave your comment</h4>
+                <!-- RD Mailform-->
+                <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="forms"
+                      method="post" action="bat/rd-mailform.php" novalidate="novalidate">
+                    <div class="row row-10">
+                        <div class="col-12 col-md-6">
+                            <div class="form-wrap">
+                                <label for="exampleFormControlInput1"></label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1"
+                                       placeholder="Your First Name...">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="form-wrap">
+                                <label for="exampleFormControlInput1"></label>
+                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                       placeholder="Your Email...">
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-12">
+                            <div class="form-wrap">
+                                <label for="exampleFormControlTextarea1"></label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                          placeholder="Messages"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-danger btn-lg btnsm" type="submit">SUBMIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+{% block jsblock %}
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% endblock %}
