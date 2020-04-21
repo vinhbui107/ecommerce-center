@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.jumbotron {
+  font-size: 60px;
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  color: rgb(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 0.5px solid rgb(0, 0, 0);
+}
+
+.jumbotron.text-center {
+  background: rgb(255, 255, 255);
+  margin: 0;
+}
+
+h1.separator {
+  width: 85%;
+  margin: auto;
+}
+
+.relative {
+  background-color: white;
+}
+
+.jumbotron.text-center {
+  background: white;
+  margin: 0;
+}
+
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+
+.section-xl {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.breadcrumb {
+  justify-content: center;
+  margin: 0;
+  background-color: #f8f9fa !important;
+}
+
+.mau {
+  color: #d81a24;
+}
+
+.mau:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+.sigin {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-size: 46px;
+  padding-top: 70px;
+  font-weight: bold;
+}
+
+hr {
+  padding-bottom: 10%;
+  width: 9%;
+}
+
+.SI {
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+}
+
+.btn.SI:hover {
+  background: black;
+}
+
+.part {
+  padding-bottom: 100px;
+}
+
+.section-inset-1 {
+  padding-bottom: 60px;
+}
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.cssload-container {
+  width: 100%;
+  height: 36px;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+html .row-45 {
+  margin-bottom: -45px;
+}
+
+.btn-danger {
+  color: #fff;
+  background-color: #d81a24;
+  border-color: #d81a24;
+}
+
+a.btn.btn-danger.btn-sm.pull-right {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+table.table.table-hover.text-left {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+
+.table-hover thead tr {
+  box-shadow: 0 1px 3px rgba(183, 183, 183, 0.8);
+}
+
+.bg-accent {
+  background-color: #d81a24;
+  color: white;
+}
+
+.table-responsive {
+  border: 1px solid #ddd;
+}
+
+.table thead tr th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-family: "Roboto Slab", serif;
+  empty-cells: hide;
+}
+
+.table-hover > tfoot > tr > td {
+  border-bottom: 1px solid rgba(221, 221, 221, 0.4);
+}
+
+.fa-trash:hover {
+  color: #000;
+}
+
+.icon-xs {
+  width: 20px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.icon-gray {
+  color: #b7b7b7;
+}
+
+.fa-trash {
+  cursor: pointer;
+}
+
+.table > tfoot > tr > td {
+  padding: 10px 25px;
+  line-height: 1.5;
+  border: none;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+form {
+  margin-bottom: 0;
+  display: block;
+  margin-top: 0em;
+}
+
+[class*="fa-"]:before {
+  font-weight: 400;
+  font-family: "FontAwesome";
+}
+
+.fa-angle-left:before {
+  content: "\f104";
+}
+
+.fa-angle-right:before {
+  content: "\f105";
+}
+
+.btn-group-sm > .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: 0.2rem;
+}
+
+* + .btn {
+  margin-top: 30px;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0;
+  border-width: 2px;
+  transition: 0.4s;
+  white-space: normal;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 16px;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+
+.quantity .minus:hover,
+.quantity .plus:hover {
+  background-color: #dad8da;
+}
+
+.quantity .minus {
+  bottom: 0;
+}
+
+.shopping-cart {
+  margin-top: 20px;
+}
+
+.fw-b {
+  font-weight: bold;
+}
+
+.page .text-gray {
+  color: #b7b7b7;
+}
+
+.quantity input {
+  width: 30px;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 300;
+  border: none;
+  background-color: transparent;
+}
+
+a.btn.btn-danger.btn-sm.btn-min-width-lg.offset-custom-5 {
+  padding: 15px 68px;
+  font-size: 18px;
+  border-radius: 6px;
+}

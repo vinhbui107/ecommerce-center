@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.jumbotron {
+  font-size: 60px;
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  color: rgb(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 0.5px solid rgb(0, 0, 0);
+}
+.separator::before {
+  margin: 0.25em;
+}
+.separator::after {
+  margin: 0.25em;
+}
+.jumbotron.text-center {
+  background: rgb(255, 255, 255);
+  margin: 0;
+}
+h1.separator {
+  width: 35%;
+  margin: auto;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+.section-xl {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.breadcrumb {
+  justify-content: center;
+  margin: 0;
+  background-color: #f8f9fa !important;
+}
+.mau {
+  color: #d81a24;
+}
+.mau:hover {
+  text-decoration: none;
+  color: #000;
+}
+.sigin {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-size: 46px;
+  padding-top: 70px;
+  font-weight: bold;
+}
+.container hr {
+  border-top: groove;
+  padding-bottom: 4%;
+  width: 9%;
+}
+
+.EFOr {
+  color: #b7b7b7;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+button.btn.btn-danger {
+  font-family: "Roboto Slab", serif;
+  width: 100%;
+  padding: 15px 40px;
+  border-radius: 10px;
+}
+.btn.SI:hover {
+  background: rgba(0, 0, 0, 0.56);
+}
+.part {
+  padding-bottom: 100px;
+}
+
+a.btn.btn-info.btn-lg.btn-twitter {
+  padding: 15px 50px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 10px;
+  font-weight: 625;
+}
+a.btn.btn-danger.btn-lg.btn-gplus.ml-4 {
+  padding: 15px 40px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 10px;
+  font-weight: 625;
+}
+a.btn.btn-primary.btn-lg.btn-facebook.mr-4.fm-size {
+  padding: 15px 40px;
+  font-size: 18px;
+  line-height: 1.5;
+  border-radius: 10px;
+  font-weight: 625;
+  background-color: rgb(2, 9, 114);
+}
+a.btn.btn-primary.btn-lg.btn-facebook.mr-4.fm-size:hover {
+  background-color: rgb(38, 0, 177);
+}
+input.form-control {
+  height: 60px;
+  padding: 26px 30px;
+  border: none;
+  background-color: rgba(246, 246, 246, 0.8);
+  border-radius: 10px;
+}

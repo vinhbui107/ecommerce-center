@@ -1,0 +1,84 @@
+<style>
+*{
+	box-sizing: border-box;
+	font-family: 'Roboto Slab', serif;
+}
+
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+.navbar {
+  background-color: #130202 !important;
+  height: 80px ;
+}
+.navbar li a {
+  color: #fff !important;
+  margin: 0px 10px;
+  padding: 6px 5px;
+  text-decoration: none;
+}
+
+/*sub-menu*/
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  margin-left: -30px;
+  width: 290px;
+  background: #151515;
+  margin-top: 1px;
+  top: 100%;
+  z-index: 10;
+  text-decoration: none;
+  transition: all 0.1s 0.1s ease-in;
+  -moz-transition: all 0.1s 0.1s ease-in;
+  -webkit-transition: all 0.1s 0.1s ease-in;
+}
+ .navbar-branch img {
+   height = 60px !importain;
+ }
+</style>
+
+<header>
+  <nav class="navbar navbar-expand-md navbar-light sticky-top">
+    <div id="menuTop" class="container">
+      <a class="navbar-branch list-item" href="{% url 'core:home' %}">
+        MOVIE CENTER
+        {% comment %} <img src="https://livedemo00.template-help.com/wt_prod-20691/images/logo-default.png"> {% endcomment %}
+      </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarReponsive">
+          <span class="navbar-toggler-icon" style="background-color: #fff"></span>
+         </button>
+      <div class="collapse navbar-collapse" id="navbarReponsive">
+          <ul class="navbar-nav ml-auto">
+            <li><a href="{% url 'core:home' %}">Home</a></li>
+            </li>
+            <li>
+                <a href="{% url 'core:about' %}">About</a>
+            </li>
+            <li>
+                <a href="{% url 'core:contact' %}">Contact</a>
+            </li>
+            {% if user.is_authenticated %}
+              <li>
+                <a class="list-item" href="#"><i class="fas fa-shopping-cart"></i></a>
+              </li>
+              <li>
+                <a href="#" class="list-item" >{{ user.username }}</a>
+              </li>
+              <li>
+                <a class="list-item" href="{% url 'logout' %}">Sign Out <i class="fas fa-sign-out-alt"></i></i></a>
+              </li>
+            {% else %}
+              <li>
+                <a class="list-item" href="{% url 'login' %}">Sign In <i class="fas fa-sign-in-alt"></i></a>
+              </li>
+            {% endif %}
+
+          </ul>
+      </div> <!-- collapse -->
+    </div> <!-- container-fluid -->
+  </nav> <!--navbar navbar-expand-md navbar-light bg-light sticky-top-->
+
+</header>

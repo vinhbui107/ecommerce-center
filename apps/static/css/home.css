@@ -1,0 +1,205 @@
+/* Global */
+html,
+body {
+  font-family: "Roboto Slab", serif;
+}
+
+/* Carousel */
+.movieCarousel .carousel-caption {
+  text-align: left;
+
+  /* Căn chính giữa th cha */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#movieCarousel .carousel-indicators {
+  justify-content: center;
+  transform: translateY(-10%);
+  margin: -30px;
+}
+#movieCarousel .carousel-indicators li {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background-clip: border-box;
+  top: 50px;
+  bottom: 30px;
+}
+#movieCarousel .carousel-indicators li.active {
+  background: white;
+}
+
+.carousel_background img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.movieCarousel {
+  position: relative;
+  background-image: url("../img/bg-image-1.jpg");
+  background-size: cover;
+  padding: 100px;
+}
+.movieCarousel .carousel_background {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 100%;
+  height: 100%;
+}
+.carousel-inner .carousel-item a {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s;
+}
+.carousel-inner .carousel-item a:hover {
+  color: #d81a24;
+}
+.carousel-inner .carousel-item p {
+  color: rgba(255, 255, 255, 0.4);
+}
+/* Movie List */
+.movieList h1 {
+  margin-top: 50px;
+  font-size: 50px;
+}
+.movieList hr {
+  text-align: center;
+  width: 250px;
+  border-bottom: 2px solid #b7b7b7;
+  border-top: 0;
+}
+.btn--background {
+  margin: 30px 20px;
+  font-size: 50px;
+}
+.btn--background .btn--hover:hover {
+  background-color: #d81a24;
+  border: 1px solid #d81a24;
+}
+
+.movielist-item img {
+  width: 100%;
+
+  display: block;
+  margin: 20px auto;
+}
+.movielist-item h4 {
+  color: black;
+  transition: all 0.2s;
+  margin: 0;
+}
+.movielist-item h4:hover {
+  color: #d81a24;
+}
+.movielist-item p {
+  font-size: 18px;
+  color: grey;
+  margin: 0;
+}
+.movielist-item i {
+  color: #f9be30;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+.movielist-item a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.movielist-item a:hover {
+  text-decoration: none;
+  color: red;
+  font-size: 20px;
+}
+/* Comming Soon */
+.comingSoon_content hr {
+  text-align: center;
+  width: 250px;
+  border-bottom: 2px solid red;
+  border-top: 0;
+}
+.comingSoon {
+  position: relative;
+  background-image: url("../img/6-15260951082291542102183.jpg");
+  background-size: cover;
+  padding: 20px 0;
+  margin-top: 30px;
+  color: white;
+}
+.comingSoon .container h2 {
+  text-align: center;
+  font-size: 50px;
+  margin: 20px 0;
+  position: relative;
+}
+.btn-coming {
+  position: relative;
+}
+.comingSoon .overlay_black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/* newsletter */
+.newsletter_content hr {
+  text-align: center;
+  width: 250px;
+  border-bottom: 2px solid red;
+  border-top: 0;
+  position: relative;
+}
+.newsletter_content h5 {
+  position: relative;
+}
+.newsletter {
+  position: relative;
+  background-image: url("../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg");
+  background-size: cover;
+  padding: 20px 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: white;
+}
+.newsletter .overlay_black {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.newsletter_content h2 {
+  text-align: center;
+  font-size: 50px;
+  margin: 20px 0;
+  position: relative;
+}
+.newsletter_content .input_mail {
+  position: relative;
+  left: 500px;
+  bottom: 0px;
+  height: 55px;
+  border-radius: 0.25rem;
+  width: 250px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.newsletter_content .button_sub {
+  position: relative;
+  height: 60px;
+  width: 150px;
+  left: 520px;
+  bottom: 0;
+}

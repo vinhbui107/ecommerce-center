@@ -1,0 +1,108 @@
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+.social-link {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border-radius: 50%;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background: #ddd;
+  text-decoration: none;
+  color: #555;
+}
+
+/*  */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+.jumbotron {
+  font-size: 60px;
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  color: rgb(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-center {
+  text-align: center !important;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 0.5px solid rgb(0, 0, 0);
+}
+.separator::before {
+  margin: 0.25em;
+}
+.separator::after {
+  margin: 0.25em;
+}
+.jumbotron.text-center {
+  background: rgb(255, 255, 255);
+  margin: 0;
+}
+h1.separator {
+  width: 35%;
+  margin: auto;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+.section-xl {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.breadcrumb {
+  justify-content: center;
+  margin: 0;
+  background-color: #f8f9fa !important;
+}
+.mau {
+  color: #d81a24;
+}
+.mau:hover {
+  text-decoration: none;
+  color: #000;
+}
+.sigin {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-size: 46px;
+  padding-top: 70px;
+  font-weight: bold;
+}
+.container hr {
+  border-top: groove;
+  padding-bottom: 4%;
+  width: 9%;
+}
+
+.part {
+  padding-bottom: 0px !important;
+}
