@@ -8,6 +8,7 @@ from django.contrib.auth.forms import PasswordChangeForm
 from django.views.generic import FormView
 from .forms import LoginForm, SignUpForm, UpdateProfileForm
 from django.urls import reverse_lazy
+from django.views import generic
 
 
 def profile(request):
@@ -31,7 +32,7 @@ class SiteLoginView(LoginView):
     template_name = "account/login.html"
 
 
-class SiteSignupView(FormView):
+class SiteSignupView(generic.CreateView):
     template_name = "account/signup.html"
     success_url = reverse_lazy("login")
     form_class = SignUpForm
@@ -42,14 +43,6 @@ class UpdateProfileView:
 
 
 class UpdateProfileDoneView:
-    pass
-
-
-class ChangePasswordView:
-    pass
-
-
-class ChangePasswordDoneView:
     pass
 
 
