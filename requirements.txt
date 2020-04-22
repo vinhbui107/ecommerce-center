@@ -1,0 +1,8 @@
+dj-database-url==0.5.0
+Django==3.0.5
+django-allauth==0.41.0
+django-crispy-forms==1.9.0
+django-debug-toolbar==2.2
+Pillow==7.0.0
+python-decouple==3.3
+sorl-thumbnail==12.6.3
