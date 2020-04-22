@@ -8,9 +8,9 @@ Users login, logout, change password and reset password by their email.
 
 Update users profile.
 
-Buy and checkout.
+Add movie to cart and checkout.
 
-Security basic for website (this is a importaint fearture in this project).
+Basic security for website (this is a importaint fearture in this project).
 
 ## Getting Started
 
