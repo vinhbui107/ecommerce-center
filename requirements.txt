@@ -6,3 +6,4 @@ django-debug-toolbar==2.2
 Pillow==7.0.0
 python-decouple==3.3
 sorl-thumbnail==12.6.3
+python-decouple==3.3
