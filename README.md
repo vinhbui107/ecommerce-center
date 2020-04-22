@@ -44,7 +44,7 @@ $ .\env\Scripts\activate
 Install python packages for project
 
 ```
-(env) $ pip3 install -r requirements.txt
+(env) $ pip install -r requirements.txt
 ```
 
 Run our project
