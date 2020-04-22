@@ -160,7 +160,7 @@ EMAIL_HOST_USER = "lethienbao3012@gmail.com"
 EMAIL_HOST_PASSWORD = "nguyenngocphuong1"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "MovieCenter <noreply@MovieCenter.com>"
-SITE_ID = 2
+
 # ==============================================================================
 # CACHE SETTINGS
 # ==============================================================================
