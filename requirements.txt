@@ -7,3 +7,4 @@ Pillow==7.0.0
 python-decouple==3.3
 sorl-thumbnail==12.6.3
 python-decouple==3.3
+django-widget-tweaks==1.4.8
