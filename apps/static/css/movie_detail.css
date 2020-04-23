@@ -2,6 +2,7 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
 div.row {
+  padding-top: 0;
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 2%;
@@ -113,7 +114,7 @@ button.btn.btn-lg.btn-danger {
 img.img-circle {
   height: auto;
 }
-img {
+.imge {
   max-width: 100%;
   height: auto;
   vertical-align: middle;
@@ -123,7 +124,7 @@ img {
 .row {
   padding-left: 7%;
   padding-right: 7%;
-  padding-top: 0%;
+  padding-top: 0;
   padding-bottom: 7%;
 }
 .row.row-45 {
@@ -216,4 +217,7 @@ textarea#exampleFormControlTextarea1 {
 button.btn.btn-danger.btn-lg.btnsm {
   width: 25%;
   height: 80%;
+}
+div.row.welcome {
+  padding-bottom: 0;
 }
