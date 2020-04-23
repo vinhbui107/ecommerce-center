@@ -2,22 +2,27 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 from .views import (
     profile,
-    successprofile,
+    profile_success,
 )
 
 app_name = "account"
 
 urlpatterns = [
-    path("profile/", profile, name="profile"),
-    path("successprofile/", successprofile, name="successprofile"),
+    path("profile/", profile, name="update_profile"),
+    path("profile/success/", profile_success, name="profile_success"),
     # registration
     path(
-        "password-reset/", auth_views.PasswordResetView.as_view(template_name='account/password_reset_form.html'),
-        name="password_reset"
+        "password-reset/",
+        auth_views.PasswordResetView.as_view(
+            template_name="account/password_reset_form.html"
+        ),
+        name="password_reset",
     ),
     path(
         "password-reset/done/",
-        auth_views.PasswordResetDoneView.as_view(template_name='account/password_reset_done.html'),
+        auth_views.PasswordResetDoneView.as_view(
+            template_name="account/password_reset_done.html"
+        ),
         name="password_reset_done",
     ),
     path(
@@ -32,7 +37,9 @@ urlpatterns = [
     ),
     path(
         "password-change/",
-        auth_views.PasswordChangeView.as_view(template_name='account/password_change.html'),
+        auth_views.PasswordChangeView.as_view(
+            template_name="account/password_change.html"
+        ),
         name="password_change",
     ),
     path(
