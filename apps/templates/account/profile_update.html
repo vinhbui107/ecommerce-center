@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
-{% load static %}
-
 {% load crispy_forms_tags %}
 
+{% load static %}
+
+
 {% block title %}
-    Change Password | Movie Center
+    Sign Up | Movie Center
 {% endblock title %}
 
 {% block cssblock %}
     <link rel="stylesheet" href="{% static 'css/account/base_style.css' %}">
 {% endblock cssblock %}
+
 
 
 {% block content %}
@@ -19,7 +21,7 @@
     <div class="container">
         <div class="jumbotron text-center">
             <h1 class="separator"><small>Update</small></h1>
-            <span class="font-weight-bold">change your password</span>
+            <span class="font-weight-bold">Update your profile</span>
         </div>
     </div>
 </section>
@@ -28,7 +30,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
         <li class="breadcrumb-item"><a class="mau" href="#">{{ user.username }}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Change Password</li>
+        <li class="breadcrumb-item active" aria-current="page">Update Profile</li>
     </ol>
 </nav>
 
@@ -36,10 +38,14 @@
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
             <div class="card-body">
-                <form novalidate method="post" action="{% url 'password_change' %}">
+                <form novalidate method="post" action="{% url 'account:update_profile' %}">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Confirm</button>
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <a href="{% url 'core:home' %}" class="btn btn-md btn-danger text-uppercase">Return</a>
+                    <button class="btn btn-md btn-danger text-uppercase" type="submit">Save</button>
                 </form>
             </div>
         </div>

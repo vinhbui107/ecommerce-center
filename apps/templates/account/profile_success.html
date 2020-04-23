@@ -1,18 +1,20 @@
 
-{% extends 'base.html' %}
-{% load static %}
+{% extends "base.html" %}
 
 {% load crispy_forms_tags %}
+
+{% load static %}
+
+
 {% block title %}
-  Change Password | Movie Center
-{%endblock title %}
+    Sign Up | Movie Center
+{% endblock title %}
 
 {% block cssblock %}
     <link rel="stylesheet" href="{% static 'css/account/base_style.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 {% endblock cssblock %}
+
+
 
 {% block content %}
 
@@ -20,7 +22,7 @@
     <div class="container">
         <div class="jumbotron text-center">
             <h1 class="separator"><small>Update</small></h1>
-            <span class="font-weight-bold">change your password</span>
+            <span class="font-weight-bold">Update your profile</span>
         </div>
     </div>
 </section>
@@ -29,7 +31,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
         <li class="breadcrumb-item"><a class="mau" href="#">{{ user.username }}</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Change Password</li>
+        <li class="breadcrumb-item active" aria-current="page">Update Profile</li>
     </ol>
 </nav>
 
@@ -38,16 +40,11 @@
       <div class="card card-signin my-5">
           <div class="card-body">
             <p>
-              <h1>Password change successful</h1>
-              <p>
-                Your password was changed.
-              </p>
+              <h1>Your profile changed.</h1>
               <a class="btn btn-danger" href="{% url 'core:home' %}">Return Home</a>
             </p>
           </div>
       </div>
   </div>
 </div>
-
-
-{% endblock %}
+{% endblock content %}
