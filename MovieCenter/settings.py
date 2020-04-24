@@ -139,6 +139,7 @@ USE_TZ = True
 # ==============================================================================
 
 STATIC_URL = "/static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "apps/static")]
 
 STATICFILES_FINDERS = [
@@ -170,4 +171,3 @@ DEFAULT_FROM_EMAIL = "MovieCenter <noreply@MovieCenter.com>"
 # THIRD-PARTY APPS SETTINGS
 # ==============================================================================
 CRISPY_TEMPLATE_PACK = "bootstrap4"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")

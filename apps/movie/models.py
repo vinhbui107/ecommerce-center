@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils.text import slugify
+from django.shortcuts import reverse
 
 
 class Actor(models.Model):
     name = models.CharField(max_length=30)
-    photo = models.CharField(default='No photo', max_length=50)
+    photo = models.CharField(default="No photo", max_length=50)
 
     def __str__(self):
         return self.name
@@ -19,10 +20,10 @@ class Movie(models.Model):
     country = models.CharField(max_length=5)
     year = models.CharField(max_length=4)
     imdb_score = models.DecimalField(max_digits=9, decimal_places=2)
-    imdb_link = models.URLField(default='')
+    imdb_link = models.URLField(default="")
     poster = models.CharField(max_length=50)
     description = models.TextField()
-    slug = models.SlugField(default='Default', unique=True)
+    slug = models.SlugField(default="Default", unique=True)
     is_active = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
@@ -31,3 +32,6 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse("movie-detail", kwargs={"slug": self.slug})
