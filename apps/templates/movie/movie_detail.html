@@ -5,7 +5,7 @@
 {% endblock title %}
 
 {% block cssblock %}
-    <link rel="stylesheet" href="{% static '/css/movie_detail.css' %}">
+    <link rel="stylesheet" href="{% static '/css/movie/movie_detail.css' %}">
     <link rel='stylesheet prefetch' href='https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -19,18 +19,17 @@
         </div>
     </section>
 
-    <section class="section2"
+    <section class="section2">
     <nav aria-label="breadcrumb" class="bg-light section-xl">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
-            <li class="breadcrumb-item"><a class="mau" href="#">Catalog</a></li>
+            <li class="breadcrumb-item"><a class="mau" href="{% url 'core:home' %}">Home</a></li>
             <li class="breadcrumb-item active" aria-current="page">Movie Details</li>
         </ol>
     </nav>
     </section>
 
     <section class="section3">
-        <h2 class="TitleO">Bad Santa</h2>
+        <h2 class="TitleO">{{ movie.title }}</h2>
         <hr>
         <div class="container">
             <div class="row">
@@ -38,7 +37,7 @@
                     <div class="col">
                         <div class="row">
                             <div class="col-sm-6"><img class="imge"
-                                    src="http://image.tmdb.org/t/p/original/103KNOz11U4iojwW6F1rOKKZIDp.jpg" alt="">
+                                    src="http://image.tmdb.org/t/p/original{{ movie.poster }}" alt="{{ movie.title }}">
                             </div>
                             <div class="col-sm-6">
                                 <div id="rating">
@@ -64,17 +63,16 @@
                                     <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                 </div>
 
-                                <span class="font-weight-bold">Genre:&nbsp;<span class="font-weight-light text-danger">Comedy | Crime | Drama<br></span></span>
+                                <span class="font-weight-bold">Genre:&nbsp;<span class="font-weight-light text-danger">{{ movie.genres }}<br></span></span>
                                 <span class="font-weight-bold">Release year:&nbsp;<span
-                                        class="font-weight-light">2003 <br></span></span>
-                                <span class="font-weight-bold">Director:&nbsp;<span class="font-weight-light">David Beckham <br></span></span>
+                                        class="font-weight-light">{{ movie.year }}<br></span></span>
+                                <span class="font-weight-bold">Director:&nbsp;<span class="font-weight-light">{{ movie.director }}<br></span></span>
                                 <span class="font-weight-bold">Country:&nbsp;<span
-                                        class="font-weight-light text-danger">USA <br></span></span>
-                                <span class="font-weight-bold">Score:&nbsp;<span class="font-weight-light text-danger">7.2 <br></span></span>
-                                <p class="Cetr">A miserable conman and his partner pose as Santa and his Little Helper
-                                    to rob department stores on Christmas Eve. But they run into problems when the
-                                    conman befriends a troubled kid, and the security boss discovers the plot. <a
-                                            href="https://www.imdb.com/">See more</a></p>
+                                        class="font-weight-light text-danger">{{ movie.country }}<br></span></span>
+                                <span class="font-weight-bold">Score:&nbsp;<span class="font-weight-light text-danger">{{ movie.imdb_score }}<br></span></span>
+                                <p class="Cetr">{{ movie.description|truncatewords:40}}
+                                    <a href="{{ movie.imdb_link }}" target="_blank">See more</a>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -88,43 +86,34 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-lg btn-danger"><i class="fas fa-cart-plus"></i> 63$</button>
+                <button class="btn btn-lg btn-danger"><i class="fas fa-cart-plus"></i> {{ movie.price }} $</button>
+            </div>
+        </div>
+    </section>
+    <!--Actor-->
+    <section class="section4">
+        <h2 class="TitleO">Actor Cast</h2>
+        <hr>
+        <div class="container actor">
+            <div class="row justify-content-md-center">
+                {% for actor in movie.actors.all %}
+                <div class="col col-xl-4">
+                    <div class="cast-box-media">
+                        {% if actor.photo == "nophoto" %}
+                            <img class="imge" src="{% static 'img/no-photo.jpg' %}" alt="{{ actor.name }}">
+                        {% else %}
+                            <img class="imge" src="https://image.tmdb.org/t/p/original{{ actor.photo }}" alt="{{ actor.name }}">
+                        {% endif %}
+                        <div class="cast-box-text">
+                            <h6 class="text-white">{{ actor.name }}</h6>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
         </div>
     </section>
 
-    <section class="section4">
-        <h2 class="TitleO">Actor Cast</h2>
-        <hr>
-        <div class="container">
-            <div class="row justify-content-md-center">
-                <div class="col col-xl-4">
-                    <div class="cast-box-media"><img class="imge"
-                            src="https://livedemo00.template-help.com/wt_prod-20691/images/cast-1.jpg" alt="">
-                        <div class="cast-box-text">
-                            <h6 class="text-white">Mark Johnson</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-xl-4">
-                    <div class="cast-box-media"><img class="imge"
-                            src="https://livedemo00.template-help.com/wt_prod-20691/images/cast-3.jpg" alt="">
-                        <div class="cast-box-text">
-                            <h6 class="text-white">Sam Kromstain</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col col-xl-4">
-                    <div class="cast-box-media"><img class="imge"
-                            src="https://livedemo00.template-help.com/wt_prod-20691/images/cast-4.jpg" alt="">
-                        <div class="cast-box-text">
-                            <h6 class="text-white">Edna Barton</h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="section5">
         <h2 class="TitleO">Reviews</h2>
@@ -145,7 +134,7 @@
                     </p>
                     <div class="clearfix"></div>
                     <div class="blog-post-time text-left">
-                        <time datetime="2018-04-24" class="text-muted">April 24, 2018 at 10:46 am</time>
+                        <time datetime="2018-04-24" class="text-muted">April 24, 2020 at 10:46 am</time>
                         <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the pr make but also the
                             leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
                             1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
@@ -172,12 +161,12 @@
                             </p>
                             <div class="clearfix"></div>
                             <div class="blog-post-time text-left">
-                                <time datetime="2018-04-24">April 24, 2018 at 10:46 am &nbsp;</time>
+                                <time datetime="2018-04-24">April 24, 2020 at 10:46 am &nbsp;</time>
                                 <i class="fa fa-reply">&nbsp; Jack Wilson</i> <br>
                                 <pstyle
                                 ="text-align: justify;">Eu mi bibendum neque egestas. Risus quis varius quam quisque id
                                 diam vel. Vulputate odio ut enim blandit volutpat maecenas volutpat blandit
-                                aliquam.</pstyle="text-align:>
+                                aliquam.</pstyle="text-align:">
                             </div>
                             <p><a class="float-right btn btn-outline-primary ml-2"> <i class="fa fa-reply"></i>
                                 Reply</a>
@@ -196,8 +185,7 @@
             <div class="col-md-8 text-center">
                 <h4 class="Lyc">leave your comment</h4>
                 <!-- RD Mailform-->
-                <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="forms"
-                      method="post" action="bat/rd-mailform.php" novalidate="novalidate">
+                <form class="rd-mailform text-left" data-form-output="form-output-global" data-form-type="forms" novalidate="novalidate">
                     <div class="row row-10">
                         <div class="col-12 col-md-6">
                             <div class="form-wrap">
@@ -221,7 +209,7 @@
                             </div>
                         </div>
                         <div class="col-12 text-center">
-                            <button class="btn btn-danger btn-lg btnsm" type="submit">SUBMIT</button>
+                            <button class="btn btn-danger btn-lg btnsm">SUBMIT</button>
                         </div>
                     </div>
                 </form>

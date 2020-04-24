@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+div.row {
+  padding-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 2%;
+}
+.jumbotron.text-center {
+  font-size: 60px;
+  position: relative;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  color: rgb(0, 0, 0);
+  background-color: white;
+}
+.Cetr {
+  text-align: justify;
+  padding-top: 8px;
+}
+.text-center {
+  text-align: center !important;
+}
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 0.5px solid black;
+}
+.separator::before {
+  margin: 0.25em;
+  border-bottom: groove;
+}
+
+.separator::after {
+  margin: 0.25em;
+  border-bottom: groove;
+}
+
+.jumbotron.text-center {
+  background-color: white;
+  margin: 0;
+}
+h1.separator {
+  width: 35%;
+  margin: auto;
+}
+.bg-light {
+  background-color: #f8f9fa !important;
+}
+.section-xl {
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+.breadcrumb {
+  justify-content: center;
+  margin: 0;
+  background-color: #f8f9fa !important;
+}
+.mau {
+  color: #d81a24;
+}
+.mau:hover {
+  text-decoration: none;
+  color: #000;
+}
+.TitleO {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-size: 46px;
+  padding-top: 70px;
+  font-weight: bold;
+}
+.container hr {
+  border-top: groove;
+  padding-bottom: 4%;
+  width: 9%;
+}
+.section3 hr {
+  border-top: groove;
+  padding-bottom: 4%;
+  width: 9%;
+}
+.section5 hr {
+  border-top: groove;
+  padding-bottom: 4%;
+  width: 9%;
+}
+.section4 hr {
+  border-top: groove;
+  padding-bottom: 4%;
+  width: 9%;
+}
+
+button.btn.btn-light {
+  background-color: #f8f9fa;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+}
+button.btn.btn-lg.btn-danger {
+  width: 100%;
+}
+img.img-circle {
+  height: auto;
+}
+.imge {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+  height: 410px;
+}
+.row {
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 0;
+  padding-bottom: 7%;
+}
+.row.row-45 {
+  margin: auto;
+}
+
+/****** Rating Stars Begin *****/
+div,
+label {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 1.5em;
+  margin: 10px;
+}
+/****** Style Star Rating Widget *****/
+#rating {
+  border: none;
+  float: left;
+}
+#rating > input {
+  display: none;
+} /*ẩn input radio - vì chúng ta đã có label là GUI*/
+#rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+} /*1 ngôi sao*/
+#rating > .half:before {
+  content: "\f089";
+  position: absolute;
+} /*0.5 ngôi sao*/
+#rating > label {
+  color: #ddd;
+  float: right;
+} /*float:right để lật ngược các ngôi sao lại đúng theo thứ tự trong thực tế*/
+/*thêm màu cho sao đã chọn và các ngôi sao phía trước*/
+#rating > input:checked ~ label,
+#rating:not(:checked) > label:hover,
+#rating:not(:checked) > label:hover ~ label {
+  color: #ffd700;
+}
+/* Hover vào các sao phía trước ngôi sao đã chọn*/
+#rating > input:checked + label:hover,
+#rating > input:checked ~ label:hover,
+#rating > label:hover ~ input:checked ~ label,
+#rating > input:checked ~ label:hover ~ label {
+  color: #ffed85;
+}
+/****** Rating Stars End *****/
+
+.cast-box-text {
+  position: relative;
+  width: 100%;
+  bottom: 25px;
+  text-align: center;
+}
+.card-inner {
+  margin-left: 4rem;
+}
+.Lyc {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.12em;
+  text-align: center;
+  font-size: 25px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+.btnsm {
+  margin-top: 3%;
+  font-family: "Roboto Slab", serif;
+}
+input#exampleFormControlInput1 {
+  background-color: rgba(246, 246, 246, 0.8);
+  border: none;
+  width: 430px;
+  height: 70px;
+}
+textarea#exampleFormControlTextarea1 {
+  background-color: rgba(246, 246, 246, 0.8);
+  border: none;
+  height: 300px;
+}
+button.btn.btn-danger.btn-lg.btnsm {
+  width: 25%;
+  height: 80%;
+}
+div.row.welcome {
+  padding-bottom: 0;
+}
+
+.cast-box-media img{
+  width: 100%;
+}

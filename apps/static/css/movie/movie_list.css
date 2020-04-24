@@ -1,0 +1,99 @@
+.movie_list .movie-item-style-2 img,
+.movie_single .movie-item-style-2 img,
+.userfav_list .movie-item-style-2 img {
+  width: 30%;
+}
+@media (max-width: 767px) {
+  .movie_list .movie-item-style-2 img,
+  .movie_single .movie-item-style-2 img,
+  .userfav_list .movie-item-style-2 img {
+    width: auto;
+  }
+}
+.movie-item-style-2 {
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .movie-item-style-2 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.movie-item-style-2 img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 30px;
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+@media (max-width: 767px) {
+  .movie-item-style-2 img {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .movie-item-style-2 .mv-item-infor {
+    max-width: 180px;
+    margin: 0 auto;
+  }
+}
+.movie-item-style-2 .mv-item-infor h6 {
+  margin-bottom: 10px;
+}
+.movie-item-style-2 .mv-item-infor h6 a {
+  font-family: "Dosis", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.movie-item-style-2 .mv-item-infor h6 a span {
+  color: #abb7c4;
+}
+.movie-item-style-2 .mv-item-infor .describe {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #405266;
+  margin-bottom: 25px;
+}
+.movie-item-style-2 .mv-item-infor .run-time span {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.movie-item-style-2 .mv-item-infor .rate {
+  font-size: 12px;
+}
+.movie-item-style-2 .mv-item-infor .rate i {
+  color: #f5b50a;
+  font-size: 20px;
+  margin-right: 5px;
+}
+.movie-item-style-2 .mv-item-infor p {
+  margin-bottom: 0;
+}
+.movie-item-style-2 .mv-item-infor p a {
+  color: #4280bf;
+}
+.movie-item-style-2 .mv-item-infor p a:hover {
+  color: tomato;
+}
+.movie-item-style-2:hover h6 a {
+  color: tomato;
+}
+
+.movie-item-style-2 h6 a {
+  color: black;
+}
+
+.movie-item-style-2 .mv-item-infor p {
+  padding-bottom: 5px;
+}
