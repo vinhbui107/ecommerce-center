@@ -10,7 +10,7 @@ Update users profile.
 
 Add movie to cart and checkout.
 
-Basic security for website (this is a importaint fearture in this project).
+Basic security for website (this is a importaint feature in this project).
 
 ## Getting Started
 
