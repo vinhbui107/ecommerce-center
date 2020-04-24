@@ -34,21 +34,31 @@
     </ol>
 </nav>
 
+
+
 <div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
+    <div class="col-md-7 mb-9">
+    <div class="col-sm-9 col-md-4 col-lg-4 mx-auto">
+        <div class="card card-signin my-1">
             <div class="card-body">
-                <form novalidate method="post" action="{% url 'account:update_profile' %}">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                    {% endif %}
-                    <a href="{% url 'core:home' %}" class="btn btn-md btn-danger text-uppercase">Return</a>
-                    <button class="btn btn-md btn-danger text-uppercase" type="submit">Save</button>
-                </form>
+                <img class="card-img-top" src="{{ user.photo.url }}" alt="image" style="width:150px", height="200px">
             </div>
-        </div>
-    </div>
-</div>
+            <div class="card-body">
+                <h4 class="card-title">{{ user.username }}</h4>
+                <p class="card-text">{{ user.description|truncatewords:30 }}</p>
+                <a href="{% url 'password_change' %}" class="btn btn-info">Thay đổi mật khẩu</a>
+            </div>
+        </div></div></div>
+
+        <form novalidate method="post" action="." enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <a href="{% url 'core:home' %}" class="btn btn-md btn-danger text-uppercase">Return</a>
+            <button class="btn btn-md btn-danger text-uppercase" type="submit">Save</button>
+        </form>
+            </div>
+
 {% endblock content %}

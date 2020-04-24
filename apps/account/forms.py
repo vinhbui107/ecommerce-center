@@ -26,7 +26,7 @@ class SignUpForm(UserCreationForm):
 class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = get_user_model()
-        fields = ("first_name", "last_name", "email", "address", "phone_number")
+        fields = ("first_name", "last_name", "email", "address", "phone_number", "photo")
 
 
 class ChangePasswordForm:
