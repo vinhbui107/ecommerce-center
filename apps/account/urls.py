@@ -12,17 +12,13 @@ urlpatterns = [
     path("profile/success/", profile_success, name="profile_success"),
     # registration
     path(
-        "password-reset/",
-        auth_views.PasswordResetView.as_view(
-            template_name="account/password_reset_form.html"
-        ),
+        "password_reset/",
+        auth_views.PasswordResetView.as_view(),
         name="password_reset",
     ),
     path(
-        "password-reset/done/",
-        auth_views.PasswordResetDoneView.as_view(
-            template_name="account/password_reset_done.html"
-        ),
+        "password_reset/done/",
+        auth_views.PasswordResetDoneView.as_view(),
         name="password_reset_done",
     ),
     path(
@@ -36,14 +32,12 @@ urlpatterns = [
         name="password_reset_complete",
     ),
     path(
-        "password-change/",
-        auth_views.PasswordChangeView.as_view(
-            template_name="account/password_change.html"
-        ),
+        "password_change/",
+        auth_views.PasswordChangeView.as_view(),
         name="password_change",
     ),
     path(
-        "password-change/done/",
+        "password_change/done/",
         auth_views.PasswordChangeDoneView.as_view(),
         name="password_change_done",
     ),
