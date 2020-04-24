@@ -52,7 +52,11 @@ html,body{
          </button>
       <div class="collapse navbar-collapse" id="navbarReponsive">
           <ul class="navbar-nav ml-auto">
-            <li><a href="{% url 'core:home' %}">Home</a></li>
+            <li>
+              <a href="{% url 'core:home' %}">Home</a></li>
+            </li>
+            <li>
+              <a href="{% url 'movie:movie-list' %}">Movies</a></li>
             </li>
             <li>
                 <a href="{% url 'core:about' %}">About</a>
