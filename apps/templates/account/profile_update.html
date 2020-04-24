@@ -40,12 +40,14 @@
     <div class="col-md-7 mb-9">
     <div class="col-sm-9 col-md-4 col-lg-4 mx-auto">
         <div class="card card-signin my-1">
-            <div class="card-body">
+            <div class="card-body"><center>
+                {% if user.photo %}
                 <img class="card-img-top" src="{{ user.photo.url }}" alt="image" style="width:150px", height="200px">
-            </div>
+                {% else %}
+                <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="image" style="width:150px", height="200px">
+                {% endif %}</div></center>
             <div class="card-body">
                 <h4 class="card-title">{{ user.username }}</h4>
-                <p class="card-text">{{ user.description|truncatewords:30 }}</p>
                 <a href="{% url 'password_change' %}" class="btn btn-info">Thay đổi mật khẩu</a>
             </div>
         </div></div></div>
