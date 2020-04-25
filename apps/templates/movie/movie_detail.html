@@ -12,6 +12,20 @@
 {% endblock cssblock %}
 
 {% block content %}
+
+<div class="mt-5 pt-4">
+    {% if messages %}
+        {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+      {{ message }}
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+             <span aria-hidden="true">&times;</span>
+          </button>
+    </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
     <section class="section1 relative text-center">
         <div class="jumbotron text-center">
             <h1 class="separator"><small>FACTS & INFO</small></h1>
@@ -86,7 +100,7 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-lg btn-danger"><i class="fas fa-cart-plus"></i> {{ movie.price }} $</button>
+                <a href="{{ movie.get_add_to_cart_url }}" class="btn btn-outline-danger">ADD TO CART {{ movie.price }}$</a>
             </div>
         </div>
     </section>
