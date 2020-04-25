@@ -62,7 +62,7 @@ html,body{
             </li>
             {% if user.is_authenticated %}
               <li>
-                <a class="list-item" href="#"><i class="fas fa-shopping-cart"></i></a>
+                <a class="list-item" href="/cart/yourcart/"><i class="fas fa-shopping-cart"></i></a>
               </li>
               <li>
                 <a href="/account/profile" class="list-item" >{{ user.username }}</a>
