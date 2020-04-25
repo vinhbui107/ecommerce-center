@@ -45,7 +45,7 @@
               <p class="describe"> {{ movie.description|truncatewords:25}}...</p>
               <p>Release: {{ movie.year }}</p>
               <p>Price: {{ movie.price }}$</p>
-              <button type="button" class="btn btn-outline-danger">BUY IT</button>
+              <a href="{{ movie.get_add_to_cart_url }}" class="btn btn-outline-danger">BUY IT</a>
             </div>
           </div>
         {% endfor %}
