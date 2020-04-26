@@ -3,119 +3,117 @@
 {% load static %}
 
 {% block title %}
-  Your cart | Movie Center
+    Your cart | Movie Center
 {% endblock title %}
 
 {% block cssblock %}
-  <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
 {% endblock cssblock %}
 
 {% block content %}
-<section class="relative text-center">
-    <div class="container">
-      <div class="jumbotron text-center">
-        <h1 class="separator">CHOOSE YOUR FAVORITE MOVIES</h1>
-        <span class="font-weight-bold">SHOPPING CART</span>
-      </div>
-    </div>
-  </section>
-</head>
-
-<body>
-  <nav aria-label="breadcrumb" class="bg-light section-xl">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
-      <li class="breadcrumb-item"><a class="mau" href="#">Shop</a></li>
-      <li class="breadcrumb-item active" aria-current="page">
-        Shopping Cart
-      </li>
-    </ol>
-  </nav>
-
-  <!-- Page-->
-  <div class="page text-center animated" style="animation-duration: 500ms;">
-    <main class="page-content">
-      <section class="section section-inset-1">
+    <section class="relative text-center">
         <div class="container">
-          <div class="row row-45 justify-content-end">
-            <div class="col-12 section-inset-1">
-              <div class="table-responsive">
-                <table class="table table-hover text-left">
-                  <thead>
-                    <tr class="bg-accent">
-                      <th></th>
-                      <th>Product</th>
-                      <th>Price</th>
-                      <th>Quantity</th>
-                      <th>Total Item Price</th>
-                    </tr>
-                  </thead>
-
-                    {% for order_item in movie.items.all %}
-                    <tr>
-                      <td>
-                        <a href="{% url "cart:remove_from_cart" order_item.item.slug %}"><span class="icon icon-xs fa-trash icon-gray"></span></a>
-                      </td>
-                      <td>
-                        {{ order_item.item.title }}
-                      </td>
-                      <td>{{ order_item.item.price }}$</td>
-                      <td>
-                        <a href="{% url "cart:remove-single-item-from-cart" order_item.item.slug %}"><i class="fas fa-minus mr-2"></i></a>
-                        ( {{ order_item.quantity }} )
-                        <a href="{% url "cart:add-simple-item-to-cart" order_item.item.slug %}"><i class="fas fa-plus ml-2"></i></a>
-                      </td>
-                      <td>{{ order_item.get_amount_saved }}$</td>
-                    </tr>
-                    {% empty %}
-                    <tr>
-                      <td>Your cart is empty</td>
-                    </tr>
-                    {% endfor %}
-                    {% if movie.get_total %}
-                  </tbody>
-                </table>
-              </div>
-              <div class="card-footer">
-                <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
-                  <div class="row">
-                    <div class="pull-right" style="margin: 10px">
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="jumbotron text-center">
+                <h1 class="separator">CHOOSE YOUR FAVORITE MOVIES</h1>
+                <span class="font-weight-bold">SHOPPING CART</span>
             </div>
-            <div class="col-12 col-md-7 col-md-offset-5 col-xl-4 col-xl-offset-8">
-              <div class="table-responsive">
-                <table class="table table-hover text-left">
-                  <thead>
-                    <tr class="bg-accent">
-                      <th>Cart Totals</th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="text-gray">Total</td>
-                      <td class="fw-b">{{ movie.get_total }}$</td>
-                    </tr>
-                    {% endif %}
-                  </tbody>
-                </table>
-              </div>
-              {% if movie.get_total %}
-              <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5" href="shop-checkout.html">proceed to
-                checkout</a>
-                {% else %}
-                <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5" href="/movie/all/">Continue Shopping</a>
-                {% endif %}
-              </td>
-            </div>
-          </div>
         </div>
-      </section>
-    </main>
-    <!-- Page Footer-->
-  </div>
-  <!-- Global Mailform Output-->
+    </section>
+    </head>
+
+    <body>
+    <nav aria-label="breadcrumb" class="bg-light section-xl">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+            <li class="breadcrumb-item"><a class="mau" href="#">Shop</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+                Shopping Cart
+            </li>
+        </ol>
+    </nav>
+
+    <!-- Page-->
+    <div class="page text-center animated" style="animation-duration: 500ms;">
+        <main class="page-content">
+            <section class="section section-inset-1">
+                <div class="container">
+                    <div class="row row-45 justify-content-end">
+                        <div class="col-12 section-inset-1">
+                            <div class="table-responsive">
+                                <table class="table table-hover text-left">
+                                    <thead>
+                                    <tr class="bg-accent">
+                                        <th></th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                    </tr>
+                                    </thead>
+
+                                    {% for cart_movie in cart.movies.all %}
+                                        <tr>
+                                            <td>
+                                                <a href="{% url 'cart:remove-from-cart' cart_movie.movie.slug %}"><span
+                                                        class="icon icon-xs fa-trash icon-gray"></span></a>
+                                            </td>
+                                            <td>
+                                                <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}">
+                                                    {{ cart_movie.movie.title }}
+                                                </a>
+                                            </td>
+                                            <td>{{ cart_movie.movie.price }}$</td>
+                                        </tr>
+                                    {% empty %}
+                                        <tr>
+                                            <td>Your cart is empty</td>
+                                        </tr>
+                                    {% endfor %}
+
+                                    {% if cart.get_total %}
+                                        </tbody>
+                                        </table>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="coupon col-md-5 col-sm-5 no-padding-left pull-left">
+                                                <div class="row">
+                                                    <div class="pull-right" style="margin: 10px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="col-12 col-md-7 col-md-offset-5 col-xl-4 col-xl-offset-8">
+                                        <div class="table-responsive">
+                                        <table class="table table-hover text-left">
+                                        <thead>
+                                        <tr class="bg-accent">
+                                            <th>Cart Totals</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-gray">Total</td>
+                                            <td class="fw-b">{{ cart.get_total }}$</td>
+                                        </tr>
+                                    {% endif %}
+                                    </tbody>
+                                    </table>
+                                    </div>
+                                    {% if movie.get_total %}
+                                        <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5"
+                                           href="shop-checkout.html">proceed to
+                                            checkout</a>
+                                    {% else %}
+                                        <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5"
+                                           href="/movie/all/">Continue Shopping</a>
+                                    {% endif %}
+                                    </td>
+                                    </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Page Footer-->
+    </div>
+    <!-- Global Mailform Output-->
 {% endblock content %}

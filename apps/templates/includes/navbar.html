@@ -60,10 +60,15 @@ html,body{
             <li>
                 <a href="{% url 'core:contact' %}">Contact</a>
             </li>
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
+              <a class="list-item" href="{% url 'cart:cart' %}"><i class="fas fa-shopping-cart"></i></a>
+            </li>
             {% if user.is_authenticated %}
-              <li>
-                <a class="list-item" href="/cart/yourcart/"><i class="fas fa-shopping-cart"></i></a>
-              </li>
+              {% if messages %}
+                {% for message in messages %}
+                  <li><script>alert("{{ message }}")</script></li>
+                {% endfor %}
+              {% endif %}
               <li>
                 <a href="/account/profile" class="list-item" >{{ user.username }}</a>
               </li>

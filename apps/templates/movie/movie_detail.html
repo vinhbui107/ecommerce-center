@@ -84,9 +84,12 @@
                                 <span class="font-weight-bold">Country:&nbsp;<span
                                         class="font-weight-light text-danger">{{ movie.country }}<br></span></span>
                                 <span class="font-weight-bold">Score:&nbsp;<span class="font-weight-light text-danger">{{ movie.imdb_score }}<br></span></span>
-                                <p class="Cetr">{{ movie.description|truncatewords:40}}
+                                <p class="Cetr">{{ movie.description|truncatewords:30}}
                                     <a href="{{ movie.imdb_link }}" target="_blank">See more</a>
                                 </p>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn btn-md btn-outline-danger">
+                                    <i class="fas fa-cart-plus"></i>{{ movie.price }}$
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -98,9 +101,6 @@
                                 allowfullscreen></iframe>
                     </div>
                 </div>
-            </div>
-            <div>
-                <a href="{{ movie.get_add_to_cart_url }}" class="btn btn-outline-danger">ADD TO CART {{ movie.price }}$</a>
             </div>
         </div>
     </section>

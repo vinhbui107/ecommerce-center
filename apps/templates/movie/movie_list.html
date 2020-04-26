@@ -3,87 +3,90 @@
 {% load static %}
 
 {% block title %}
-  Movie | Movie Center
+    Movie | Movie Center
 {% endblock title %}
 
 {% block cssblock %}
-  <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
-  <link rel="stylesheet" href="{% static 'css/movie/movie_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/movie/movie_list.css' %}">
 {% endblock cssblock %}
 
 
 {% block content %}
-<section class="section1 relative text-center">
-    <div class="jumbotron text-center">
-        <h1 class="separator"><small>MOVIE LIST</small></h1>
-        <span class="font-weight-bold">ALL MOVIES WE HAVE</span>
-    </div>
-</section>
+    <section class="section1 relative text-center">
+        <div class="jumbotron text-center">
+            <h1 class="separator"><small>MOVIE LIST</small></h1>
+            <span class="font-weight-bold">ALL MOVIES WE HAVE</span>
+        </div>
+    </section>
 
-<section class="section2">
-<nav aria-label="breadcrumb" class="bg-light section-xl">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
-        <li class="breadcrumb-item"><a class="mau" href="#">Movie</a></li>
-        <li class="breadcrumb-item active" aria-current="page">All Movies</li>
-    </ol>
-</nav>
-</section>
+    <section class="section2">
+        <nav aria-label="breadcrumb" class="bg-light section-xl">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+                <li class="breadcrumb-item"><a class="mau" href="#">Movie</a></li>
+                <li class="breadcrumb-item active" aria-current="page">All Movies</li>
+            </ol>
+        </nav>
+    </section>
 
-<!--Movie list-->
-<div class="page-single movie_list">
-	<div class="container">
-		<div class="row ipad-width2">
-			<div class="col-md-8 col-sm-12 col-xs-12">
-        {% for movie in movie_list %}
-          <div class="movie-item-style-2">
-            <img src="http://image.tmdb.org/t/p/original{{ movie.poster }}" alt="{{ movie.title }}">
-            <div class="mv-item-infor">
-              <h6><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }} <span>( {{ movie.year }} )</span></a></h6>
-              <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
-              <p class="genres"> {{ movie.genres }} </p>
-              <p class="describe"> {{ movie.description|truncatewords:25}}...</p>
-              <p>Release: {{ movie.year }}</p>
-              <p>Price: {{ movie.price }}$</p>
-              <a href="{{ movie.get_add_to_cart_url }}" class="btn btn-outline-danger">BUY IT</a>
+    <!--Movie list-->
+    <div class="page-single movie_list">
+        <div class="container">
+            <div class="row ipad-width2">
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    {% for movie in movie_list %}
+                        <div class="movie-item-style-2">
+                            <img src="http://image.tmdb.org/t/p/original{{ movie.poster }}" alt="{{ movie.title }}">
+                            <div class="mv-item-infor">
+                                <h6><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}
+                                    <span>( {{ movie.year }} )</span></a></h6>
+                                <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p>
+                                <p class="genres"> {{ movie.genres }} </p>
+                                <p class="describe"> {{ movie.description|truncatewords:25 }}...</p>
+                                <p>Release: {{ movie.year }}</p>
+                                <p>Price: {{ movie.price }}$</p>
+                                <a href="{% url 'cart:add-to-cart' movie.slug %}" class="btn btn-outline-danger">BUY IT</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <!--Pagination-->
+                    {% if is_paginated %}
+                        <nav class="d-flex justify-content-center wow fadeIn">
+                            <ul class="pagination pg-blue">
+
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}"
+                                           aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+
+                                <li class="page-item active">
+                                    <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}"
+                                           aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endif %}
+                </div>
             </div>
-          </div>
-        {% endfor %}
-        <!--Pagination-->
-        {% if is_paginated %}
-          <nav class="d-flex justify-content-center wow fadeIn">
-            <ul class="pagination pg-blue">
+        </div>
+    </div>
 
-              {% if page_obj.has_previous %}
-              <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                  <span class="sr-only">Previous</span>
-                </a>
-              </li>
-              {% endif %}
-
-              <li class="page-item active">
-                <a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-
-              {% if page_obj.has_next %}
-              <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </li>
-              {% endif %}
-            </ul>
-          </nav>
-        {% endif %}
-			</div>
-		</div>
-	</div>
-</div>
-
-</div>
+    </div>
 {% endblock content %}
