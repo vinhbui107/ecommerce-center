@@ -12,6 +12,7 @@ urlpatterns = [
     path("movie/", include("apps.movie.urls")),
     path("cart/", include("apps.cart.urls")),
     path("checkout/", include("apps.checkout.urls")),
+    # user authenticated
     path("account/", include("django.contrib.auth.urls")),
     path("account/", include("apps.account.urls")),
     path("login/", SiteLoginView.as_view(), name="login"),

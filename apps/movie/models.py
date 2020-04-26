@@ -22,8 +22,9 @@ class Movie(models.Model):
     imdb_score = models.DecimalField(max_digits=9, decimal_places=2)
     imdb_link = models.URLField(default="")
     poster = models.CharField(max_length=50)
+    trailer = models.URLField(default="", null=True)
     description = models.TextField()
-    slug = models.SlugField(default="Default", unique=True)
+    slug = models.SlugField(default="", unique=True)
     is_active = models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):
@@ -40,4 +41,4 @@ class Movie(models.Model):
         return reverse("cart:add-to-cart", kwargs={"slug": self.slug})
 
     def get_remove_from_cart_url(self):
-        return reverse("cart:remove_from_cart", kwargs={"slug": self.slug})
+        return reverse("cart:remove-from-cart", kwargs={"slug": self.slug})
