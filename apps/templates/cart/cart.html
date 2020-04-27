@@ -56,7 +56,7 @@
                                                         class="icon icon-xs fa-trash icon-gray"></span></a>
                                             </td>
                                             <td>
-                                                <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}">
+                                                <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}" class="text-dark">
                                                     {{ cart_movie.movie.title }}
                                                 </a>
                                             </td>
@@ -99,9 +99,9 @@
                                     </tbody>
                                     </table>
                                     </div>
-                                    {% if movie.get_total %}
+                                    {% if cart.get_total %}
                                         <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5"
-                                           href="shop-checkout.html">proceed to
+                                           href="{% url 'checkout:checkout' %}">proceed to
                                             checkout</a>
                                     {% else %}
                                         <a class="btn btn-danger btn-sm btn-min-width-lg offset-custom-5"
