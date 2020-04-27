@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+    Sign Up | Movie Center
+{% endblock title %}
+
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+{% endblock cssblock %}
+
+{% block content %}
+
+<section class="relative">
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="separator"><small>Update</small></h1>
+            <span class="font-weight-bold">Update your profile</span>
+        </div>
+    </div>
+</section>
+
+<nav aria-label="breadcrumb" class="bg-light section-xl">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+        <li class="breadcrumb-item"><a class="mau" href="#">{{ user.username }}</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Update Profile</li>
+    </ol>
+</nav>
+
+<div class="row">
+  <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="card card-signin my-5">
+          <div class="card-body">
+            <p>
+              <h1>Payment success!</h1>
+              <a class="btn btn-danger" href="{% url 'core:home' %}">Return Home</a>
+            </p>
+          </div>
+      </div>
+  </div>
+</div>
+
+{% endblock content %}

@@ -1,7 +1,93 @@
 {% extends 'base.html' %}
 
+{% load static %}
+{% load crispy_forms_tags %}
+
 {% block title %}
+    Check Out | Movie Center
 {% endblock title %}
 
-{% block content %}
+{% block cssblock %}
+    <link rel="stylesheet" href="{% static 'css/base_style.css' %}"/>
+{% endblock cssblock %} {% block content %}
+
+    <section class="section1 relative text-center">
+        <div class="jumbotron text-center">
+            <h1 class="separator"><small>SHOP</small></h1>
+            <span class="font-weight-bold">CHECK OUT</span>
+        </div>
+    </section>
+
+    <section class="section2">
+        <nav aria-label="breadcrumb" class="bg-light section-xl">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+            </ol>
+        </nav>
+    </section>
+
+	<div class="container">
+		<br>
+		<h3><strong>YOUR CHOICES</strong></h3>
+		<br>
+        <table class="table table-hover text-left">
+            <thead class="bg-danger">
+            <tr class="bg-accent">
+                <th class="text-light">Movie</th>
+				<th></th>
+				<th></th>
+                <th class="text-light">Price</th>
+            </tr>
+            </thead>
+            {% for cart_movie in cart.movies.all %}
+                <tr>
+                    <td class="text-dark">
+                        <a href="{% url 'movie:movie-detail' cart_movie.movie.slug %}" class="text-body">
+                            {{ cart_movie.movie.title }}
+                        </a>
+                    </td>
+					<td></td>
+                    <td></td>
+					<td class="text-body">
+                        {{ cart_movie.movie.price }} $
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td><strong>Total</strong></td>
+				<td></td>
+				<td></td>
+                <td><strong>{{ cart.get_total }} $</strong></td>
+            </tr>
+            <tr></tr>
+        </table>
+	</div>
+
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <form novalidate method="post" action="{% url 'checkout:checkout' %}">
+                        {% csrf_token %}
+                        <h3><strong>YOUR SHIPPING INFORMATION</strong></h3>
+						<br>
+                        {{ form |crispy }} {% if redirect_field_value %}
+                        <input
+                                type="hidden"
+                                name="{{ redirect_field_name }}"
+                                value="{{ redirect_field_value }}"
+                        />
+                    {% endif %}
+                        <button
+                                class="btn btn-lg btn-danger btn-block text-uppercase"
+                                type="submit"
+                        >
+                            PAYMENT
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
