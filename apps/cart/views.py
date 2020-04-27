@@ -9,6 +9,7 @@ from apps.cart.models import Cart, CartMovie
 from datetime import datetime
 from django.http.response import HttpResponseRedirect
 from django.utils import timezone
+from django.http import HttpResponseRedirect
 
 
 class CartDetailView(LoginRequiredMixin, View):
@@ -18,8 +19,8 @@ class CartDetailView(LoginRequiredMixin, View):
             context = {"cart": cart}
             return render(self.request, "cart/cart.html", context)
         except ObjectDoesNotExist:
-            messages.error(self.request, "You do not have an active order")
-            return HttpResponseRedirect("/")
+            cart = Cart.objects.create(user_id=self.request.user, is_active=True)
+            return HttpResponseRedirect("/cart")
 
 
 @login_required
@@ -39,8 +40,8 @@ def add_to_cart(request, slug):
             messages.info(request, "This movie was in your cart!")
             return redirect("cart:cart")
         else:
-            cart_movie.update_date = timezone.now()
             cart.movies.add(cart_movie)
+            cart.save()
             messages.info(request, "This movie just added to your cart.")
             return redirect("cart:cart")
     else:
@@ -65,8 +66,8 @@ def remove_from_cart(request, slug):
                 movie=movie, user_id=request.user, is_active=True
             )[0]
             cart.movies.remove(cart_movie)
+            cart.save()
             cart_movie.delete()
-            cart_movie.update_date = timezone.now()
             messages.info(request, "This item was removed from your cart.")
             return redirect("cart:cart")
         else:
