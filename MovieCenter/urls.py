@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth.views import LogoutView
 from apps.account.views import SiteLoginView, SiteSignupView
+from django.conf.urls import handler404
 
 
 urlpatterns = [
@@ -31,3 +32,5 @@ if settings.DEBUG:
         urlpatterns = [path("__debug__/", include(debug_toolbar.urls)),] + urlpatterns
     except ImportError:
         pass
+
+handler404 = "apps.core.views.error404"
