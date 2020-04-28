@@ -5,20 +5,22 @@ body {
 }
 
 /* Carousel */
-.movieCarousel .carousel-caption {
+.movieCarousel .carousel-caption{
   text-align: left;
 
   /* Căn chính giữa th cha */
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
+
+
 }
-#movieCarousel .carousel-indicators {
+#movieCarousel .carousel-indicators{
   justify-content: center;
-  transform: translateY(-10%);
+  transform: translateY(-10%) ;
   margin: -30px;
 }
-#movieCarousel .carousel-indicators li {
+#movieCarousel .carousel-indicators li{
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -26,149 +28,206 @@ body {
   background-clip: border-box;
   top: 50px;
   bottom: 30px;
+
 }
-#movieCarousel .carousel-indicators li.active {
+#movieCarousel .carousel-indicators li.active{
   background: white;
+
 }
 
-.carousel_background img {
+.carousel_background img{
   display: block;
   width: 100%;
   height: 100%;
 }
-.movieCarousel {
+.movieCarousel{
   position: relative;
-  background-image: url("../img/bg-image-1.jpg");
+  background-image: url('../img/bg-image-1.jpg');
   background-size: cover;
   padding: 100px;
 }
-.movieCarousel .carousel_background {
+.movieCarousel .carousel_background{
   position: absolute;
   top: 50px;
   left: 50px;
   width: 100%;
   height: 100%;
+
 }
-.carousel-inner .carousel-item a {
+.carousel-inner .carousel-item a{
   font-size: 30px;
   text-decoration: none;
   color: white;
-  transition: all 0.2s;
+  transition: all .2s;
 }
-.carousel-inner .carousel-item a:hover {
-  color: #d81a24;
+.carousel-inner .carousel-item a:hover{
+  color:#d81a24;
 }
-.carousel-inner .carousel-item p {
+.carousel-inner .carousel-item p{
   color: rgba(255, 255, 255, 0.4);
 }
 /* Movie List */
-.movieList h1 {
-  margin-top: 50px;
+.movieList h1{
+  margin-top:50px;
   font-size: 50px;
 }
-.movieList hr {
+.movieList hr{
   text-align: center;
   width: 250px;
   border-bottom: 2px solid #b7b7b7;
   border-top: 0;
 }
-.btn--background {
+.btn--background{
   margin: 30px 20px;
   font-size: 50px;
 }
-.btn--background .btn--hover:hover {
+.btn--background .btn--hover:hover{
   background-color: #d81a24;
   border: 1px solid #d81a24;
 }
 
-.movielist-item img {
+.movielist-item img{
   width: 100%;
 
   display: block;
   margin: 20px auto;
+
+
 }
-.movielist-item h4 {
+.movielist-item h4{
   color: black;
-  transition: all 0.2s;
+  transition: all .2s;
   margin: 0;
 }
-.movielist-item h4:hover {
-  color: #d81a24;
+.movielist-item h4:hover{
+  color:#d81a24;
 }
-.movielist-item p {
+.movielist-item p{
   font-size: 18px;
   color: grey;
   margin: 0;
 }
-.movielist-item i {
+.movielist-item i{
   color: #f9be30;
   margin: 0;
   padding: 0;
   font-size: 15px;
 }
-.movielist-item a {
+.movielist-item a{
   text-decoration: none;
   color: black;
   font-size: 20px;
 }
-.movielist-item a:hover {
+.movielist-item a:hover{
   text-decoration: none;
   color: red;
   font-size: 20px;
 }
 /* Comming Soon */
-.comingSoon_content hr {
+.comingSoon_content hr{
   text-align: center;
+  position: relative;
   width: 250px;
   border-bottom: 2px solid red;
   border-top: 0;
+  margin: 30px 50px;
+  left: 380px;
 }
-.comingSoon {
+.comingSoon{
   position: relative;
-  background-image: url("../img/6-15260951082291542102183.jpg");
+  background-color:black;
   background-size: cover;
   padding: 20px 0;
-  margin-top: 30px;
+  margin-top: 80px;
   color: white;
 }
-.comingSoon .container h2 {
+.comingSoon .container h2{
   text-align: center;
   font-size: 50px;
   margin: 20px 0;
   position: relative;
+
 }
-.btn-coming {
+.comingSoon_content .btn-custom a{
   position: relative;
+  border: 1px solid red;
+  color: red;
+  padding: 15px 100px;
+  margin: 30px 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.27s;
+  left: 450px;
+
 }
-.comingSoon .overlay_black {
+.btn-custom a:hover{
+  background-color:red;
+  color:white;
+}
+.comingSoon .overlay_black{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color:  rgb(247, 247, 247,0.1);
+}
+.coming_trailer{
+  position: relative;
+}
+.coming_trailer img{
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.coming_trailer i{
+  width: 60px;
+  height: 60px;
+  display: block;
+  border: 2px solid white ;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  line-height: 57px;
+  transition: all 0.2s;
+  position: relative;
+  top: 230px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.coming_trailer i:hover{
+  border: 2px solid red;
+  background-color: red;
+
 }
 /* newsletter */
-.newsletter_content hr {
+.newsletter_content hr{
   text-align: center;
-  width: 250px;
+  width: 150px;
   border-bottom: 2px solid red;
   border-top: 0;
   position: relative;
+
 }
-.newsletter_content h5 {
+.newsletter_content h5{
   position: relative;
+  margin-top: 50px;
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 300px;
 }
-.newsletter {
+.newsletter{
   position: relative;
-  background-image: url("../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg");
+  background-image: url('../img/di-nhan-8-phuong-hoang-bong-toi-x-men-dark-phoenix-2019-slider.jpg');
   background-size: cover;
   padding: 20px 0;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 80px;
   color: white;
 }
-.newsletter .overlay_black {
+.newsletter .overlay_black{
   position: absolute;
   top: 0;
   left: 0;
@@ -176,30 +235,101 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.newsletter_content h2 {
+.newsletter_content h2{
   text-align: center;
   font-size: 50px;
-  margin: 20px 0;
+  margin-top: 60px;
   position: relative;
+
 }
-.newsletter_content .input_mail {
+.newsletter_footer{
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+.newsletter_content .input_mail{
   position: relative;
-  left: 500px;
+  left: 450px;
   bottom: 0px;
   height: 55px;
   border-radius: 0.25rem;
-  width: 250px;
+  width: 280px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(246, 246, 246, 0.3);
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: rgba(246, 246, 246, 0.3);
 }
-.newsletter_content .button_sub {
+
+.newsletter_footer .btn-custom a{
   position: relative;
-  height: 60px;
-  width: 150px;
-  left: 520px;
-  bottom: 0;
+  border: 1px solid red;
+  color: white;
+  background-color: red;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  border-radius: 4px;
+  left: 750px;
+  bottom: 65px;
+  padding: 15px 40px;
+  display: inline-block;
+  transition: all 0.2s;
+}
+.newsletter_footer .btn-custom a:hover{
+  color: red;
+  background-color: rgb(246, 246, 246,0.1);
+}
+/* TESTIMONIAL */
+.testimonial{
+  margin-top: 90px;
+
+
+}
+.testimonial h1{
+  text-align: center;
+  letter-spacing: 0.12em;
+  font-size: 50px;
+  font-weight: 300px;
+  left: 500px;
+}
+.testimonial hr{
+
+  width: 250px;
+  border-bottom: 2px solid #b7b7b7;
+  border-top: 0;
+  left: 300px;
+}
+.testimonial .carousel-item img {
+  margin-top: 80px;
+  border-radius: 50%;
+  position: relative;
+  left: 300px;
+}
+.testimonial .carousel-item h3{
+  margin-top: 10px;
+  text-align: center;
+  color: red;
+  font-size: 20px;
+  font-style: bold;
+}
+.testimonial .carousel-item p{
+  text-align: center;
+  color: black;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+#testimonialCarousel .carousel-indicators li{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: transparent;
+
+}
+#testimonialCarousel .carousel-indicators li.active{
+  background: black;
+
 }
