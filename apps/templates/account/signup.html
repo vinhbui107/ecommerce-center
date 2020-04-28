@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
-
+{% load widget_tweaks %}
 {% load crispy_forms_tags %}
 
 {% block title %}
@@ -9,7 +9,7 @@
 {% endblock title %}
 
 {% block cssblock %}
-    <link rel="stylesheet" href="{% static 'css/account/signup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/account/login.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
@@ -32,14 +32,8 @@
     <li class="breadcrumb-item active" aria-current="page">Sign Up</li>
     </ol>
 </nav>
-<section class="part section section-inset-1">
-    <div class="container">
-    <h2 class="sigin">create a new account</h2>
-    <hr>
-    </div>
-</section>
 <!--end -->
-<div class="row">
+<!--<div class="row">
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
             <div class="card-body">
@@ -56,5 +50,123 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->
+
+
+<section class="part section section-inset-1">
+  <div class="container">
+      <h2 class="sigin">create a new account</h2>
+      <hr>
+      <div class="row justify-content-center">
+          <div class="col-12 col-xl-8 ">
+              <div class="btn-group-variant text-center ">
+                  <a class="btn btn-primary btn-lg btn-facebook mr-4 fm-size" href="#"><i
+                          class="fab fa-facebook-f"></i> Facebook</a>
+                  <a class="btn btn-info btn-lg btn-twitter" href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                  <a class="btn btn-danger btn-lg btn-gplus ml-4" href="#"><i
+                          class="fab fa-google-plus-g pr-1"></i> Google+</a>
+              </div>
+
+              <div class="row justify-content-center offset-custom-5">
+                  <div class="col-xl-6 col-xl offset-custom-3">
+                      <p class="text-uppercase text-center EFOr">or</p>
+                      <form class="rd-mailform text-left" method="post" action="{% url 'signup' %}">
+                        {% csrf_token %}
+
+                        {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                            <div class="alert alert-danger" role="alert">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                        <div class="alert alert-danger" role="alert">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                      {% endif %}
+
+                    <div class="form-group">
+                      {% render_field form.username class="form-control" placeholder="Username" %}
+                    </div>
+
+                    <div class="form-group">
+                      {% render_field form.password1 class="form-control" placeholder="Password" %}
+                    </div>
+
+                    <div class="form-group">
+                      {% render_field form.password2 class="form-control" placeholder="Password Again" %}
+                    </div>
+
+                    <div class="form-group">
+                      {% render_field form.email class="form-control" placeholder="Email" %}
+                    </div>
+
+                        {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                        <div class="text-center">
+                          <button class="btn btn-danger" type="submit">SIGN UP</button>
+                        </div>
+                        <hr class="my-4">
+                        <center>Already have an account?<a href="{% url 'login' %}"> Login</a></center>
+                      </form>
+                  </div>
+              </div
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
 {% endblock content %}
+
+
+
+<form novalidate method="post" action="{% url 'signup' %}">
+  {% csrf_token %}
+
+  {% if form.errors %}
+  {% for field in form %}
+      {% for error in field.errors %}
+      <div class="alert alert-danger" role="alert">
+              <strong>{{ error|escape }}</strong>
+          </div>
+      {% endfor %}
+  {% endfor %}
+  {% for error in form.non_field_errors %}
+  <div class="alert alert-danger" role="alert">
+          <strong>{{ error|escape }}</strong>
+      </div>
+  {% endfor %}
+{% endif %}
+
+  <div class="form-group">
+    {% render_field form.username class="form-control" placeholder="Username" %}
+</div>
+
+<div class="form-group">
+  {% render_field form.password1 class="form-control" placeholder="Password" %}
+</div>
+
+<div class="form-group">
+{% render_field form.password2 class="form-control" placeholder="Password Again" %}
+
+</div>
+
+<div class="form-group">
+{% render_field form.email class="form-control" placeholder="Email" %}
+
+</div>
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
+  <hr class="my-4">
+  <center>Already have an account?<a href="{% url 'login' %}">Login</a></center>
+</form>
