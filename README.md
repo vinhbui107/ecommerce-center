@@ -4,13 +4,13 @@ My assignment for Information Security.
 
 ## Features
 
-Users login, logout, change password and reset password by their email.
+* Users login, logout, change password and reset password by their email.
 
-Update users profile.
+* Update users profile.
 
-Add movie to cart and checkout.
+* Add movie to cart and checkout.
 
-Basic security for website (this is a importaint feature in this project).
+* Basic security for website (this is a importaint feature in this project).
 
 ## Third-Party Packages
 
