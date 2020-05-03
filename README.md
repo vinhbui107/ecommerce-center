@@ -54,3 +54,18 @@ Run our project
 ```
 
 Load the site at http://127.0.0.1:8000.
+
+## Tech Specs
+
+* Python 3.8
+* Django 3.0.5
+* dj-database-url 0.5.0
+* django-allauth 0.41.0
+* django-crispy-forms 1.9.0
+* Bootstrap 4.3.1
+* jQuery 3.4.1
+* Font Awesome 5.11.2
+* python-decouple 3.3
+* Pillow 7.0.0
+* sorl-thumbnail 12.6.3
+* django-debug-toolbar 2.2
