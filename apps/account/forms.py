@@ -10,14 +10,17 @@ from django.contrib.auth.forms import (
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from .models import CustomerUser
+from snowpenguin.django.recaptcha3.fields import ReCaptchaField
 import re
 
 
 class LoginForm(forms.Form):
-    pass
+    captcha = ReCaptchaField(score_threshold=0.5)
 
 
 class SignUpForm(UserCreationForm):
+    captcha = ReCaptchaField(score_threshold=0.5)
+
     class Meta:
         model = CustomerUser
         fields = ("username", "email", "address", "phone_number")
@@ -39,6 +42,8 @@ class SignUpForm(UserCreationForm):
 
 
 class UpdateProfileForm(forms.ModelForm):
+    captcha = ReCaptchaField(score_threshold=0.5)
+
     class Meta:
         model = get_user_model()
         fields = ("first_name", "last_name", "email", "address", "phone_number", "photo")
