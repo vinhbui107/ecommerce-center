@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load recaptcha3 %}
+
 {% load static %}
 
 <html lang="en">
@@ -18,9 +20,13 @@
         {% block title %}
         {% endblock title %}
     </title>
+
+    {% recaptcha_init %}
+    {% recaptcha_ready action_name='home' custom_callback='alertToken' %}
 </head>
 
 <body>
+
 {% include 'includes/navbar.html' %}
 
 {% block content %}
@@ -30,6 +36,7 @@
 
 <!-- Js, Jquery & something else-->
 {% block jsblock %}
+
 {% endblock jsblock %}
 </body>
 </html>
