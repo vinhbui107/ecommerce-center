@@ -22,41 +22,20 @@
                 <li data-target="#movieCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
+
                 <div class="carousel-item active">
                     <div class="row">
                         <div class="col-6">
-                            <img src="{% static 'img/joker-sider.jpg' %}"
-                                 class="d-block w-100" alt="...">
-
-                            <a href="#">IT 2017</a>
-                            <p>2017, USA, Drama, Horror</p>
-
+                            <img src="https://xemphimmoinhat2016.files.wordpress.com/2016/08/nedpy14ah2wkhd_1_b.jpg"
+                                 class="d-block w-100" alt="..." height="280" width="280">
+                            <a href="/movie/kickboxer-vengeance">KICKBOXER: VENGEANCE</a>
+                            <p>2016, USA, Comedy, Horror, Thriller</p>
                         </div>
                         <div class="col-6">
-                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100" alt="...">
-
-                            <a href="#">IT 2017</a>
-                            <p>2017, USA, Drama, Horror</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item ">
-                    <div class="row">
-                        <div class="col-6">
-                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100"
-                                 alt="...">
-
-                            <a href="#">IT 2017</a>
-                            <p>2017, USA, Drama, Horror</p>
-
-                        </div>
-                        <div class="col-6">
-                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100" alt="...">
-
-                            <a href="#">IT 2017</a>
-                            <p>2017, USA, Drama, Horror</p>
-
+                          <img src="https://cdn.arstechnica.net/wp-content/uploads/2016/02/deadpool-SYB_0010_v064.1113_rgb.jpg"
+                          class="d-block w-100" alt="..." height="280" width="280">
+                            <a href="/movie/deadpool">DEADPOOL</a>
+                            <p>2016, USA, Drama</p>
                         </div>
                     </div>
                 </div>
@@ -64,22 +43,38 @@
                 <div class="carousel-item ">
                     <div class="row">
                         <div class="col-6">
-                            <img src="{% static 'img/joker-sider.jpg' %}" class="d-block w-100" alt="...">
-
-                            <a href="#">IT 2017</a>
-                            <p>2017, USA, Drama, Horror</p>
-
+                                 <img src="https://image.thanhnien.vn/660/uploaded/taban/2016_06_12/conjuring1_siim.jpg"
+                                 class="d-block w-100" alt="..." height="280" width="280">
+                            <a href="/movie/the-conjuring-2">The Conjuring 2</a>
+                            <p>2016, USA, Drama</p>
                         </div>
                         <div class="col-6">
-                            <img src="{% static 'img/joker-sider.jpg' %}"
-                                 class="d-block w-100" alt="...">
-
-                            <a href="#">IT 2017</a>
-                            <p>2017, USA, Drama, Horror</p>
-
+                          <img src="https://photo2.tinhte.vn/data/attachment-files/2016/04/3679238_imopfyts2xcogqtzfeef.jpg"
+                          class="d-block w-100" alt="..." height="280" width="280">
+                            <a href="/movie/captain-america-civil-war">CAPTAIN AMERICA: CIVIL WAR</a>
+                            <p>2016, USA, Action, Adventure, Comedy, Romance, Sci-Fi</p>
                         </div>
                     </div>
                 </div>
+
+                <div class="carousel-item ">
+                    <div class="row">
+                        <div class="col-6">
+                          <img src="https://reviewswithatude.files.wordpress.com/2017/03/indignation.png"
+                          class="d-block w-100" alt="..." height="280" width="280">
+
+                            <a href="/movie/indignation">Indignation</a>
+                            <p>2016, USA, Adventure</p>
+                        </div>
+                        <div class="col-6">
+                          <img src="https://steamcdn-a.akamaihd.net/steam/apps/641350/header.jpg?t=1552348519"
+                          class="d-block w-100" alt="..." height="280" width="280">
+                            <a href="/movie/a-beginners-guide-to-snuff">A BEGINNER'S GUIDE TO SNUFF</a>
+                            <p>2017, USA, Drama, Horror</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -88,106 +83,23 @@
         <hr>
         <div class="container">
             <div class="row movielist-item">
+              {% for movie in movie_list %}
                 <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
+                  <img src="http://image.tmdb.org/t/p/original{{ movie.poster }}" alt="" height="400" width="100">
+                    <h4><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}</a></h4>
+                    <p>{{ movie.country }}</p>
+                    <p class="rate"><i class="fas fa-star"></i><span> {{ movie.imdb_score }} </span> /10</p
+                    <p class="dollar font-weight-bold"> {{ movie.price }}$</p>
+                    {% if user.is_authenticated %}
+                    <span><a href="{% url 'cart:add-to-cart' movie.slug %}">BUY MOVIE</a></span>
+                  {% else %}
+                  <span><a href="{% url 'login' %}">BUY MOVIE</a></span>
+                  {% endif %}
                 </div>
-                <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
-                </div>
-                <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
-                </div>
-                <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
-                </div>
+                {% endfor %}
             </div>
 
-            <div class="row movielist-item">
-                <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
-                </div>
-                <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
-                </div>
-                <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
-                </div>
-                <div class="col-3">
-                    <img src="{% static 'img/mat-biec-1058.jpg' %}" alt="">
-                    <h4>Mắt Biếc</h4>
-                    <p>Việt nam</p>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <p class="dollar font-weight-bold">$3.49</p>
-                    <span><a href="#">BUY MOVIE</a></span>
-                </div>
-            </div>
+
         </div>
     </section>
     <section class="comingSoon">
