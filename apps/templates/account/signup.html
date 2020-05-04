@@ -72,36 +72,20 @@
                       <p class="text-uppercase text-center EFOr">or</p>
                       <form class="rd-mailform text-left" method="post" action="{% url 'signup' %}">
                         {% csrf_token %}
-
-                        {% if form.errors %}
-                        {% for field in form %}
-                            {% for error in field.errors %}
-                            <div class="alert alert-danger" role="alert">
-                                    <strong>{{ error|escape }}</strong>
-                                </div>
-                            {% endfor %}
-                        {% endfor %}
-                        {% for error in form.non_field_errors %}
-                        <div class="alert alert-danger" role="alert">
-                                <strong>{{ error|escape }}</strong>
-                            </div>
-                        {% endfor %}
-                      {% endif %}
-
                     <div class="form-group">
-                      {% render_field form.username class="form-control" placeholder="Username" %}
+                      {% render_field form.username|as_crispy_field %}
+                    </div>
+
+                    <div class="form-group" placeholder="Email">
+                      {% render_field form.password1|as_crispy_field %}
                     </div>
 
                     <div class="form-group">
-                      {% render_field form.password1 class="form-control" placeholder="Password" %}
+                      {% render_field form.password2|as_crispy_field  %}
                     </div>
 
                     <div class="form-group">
-                      {% render_field form.password2 class="form-control" placeholder="Password Again" %}
-                    </div>
-
-                    <div class="form-group">
-                      {% render_field form.email class="form-control" placeholder="Email" %}
+                      {% render_field form.email|as_crispy_field  %}
                     </div>
 
                         {% if redirect_field_value %}
@@ -119,54 +103,4 @@
       </div>
   </div>
 </section>
-
-
-
-
-
 {% endblock content %}
-
-
-
-<form novalidate method="post" action="{% url 'signup' %}">
-  {% csrf_token %}
-
-  {% if form.errors %}
-  {% for field in form %}
-      {% for error in field.errors %}
-      <div class="alert alert-danger" role="alert">
-              <strong>{{ error|escape }}</strong>
-          </div>
-      {% endfor %}
-  {% endfor %}
-  {% for error in form.non_field_errors %}
-  <div class="alert alert-danger" role="alert">
-          <strong>{{ error|escape }}</strong>
-      </div>
-  {% endfor %}
-{% endif %}
-
-  <div class="form-group">
-    {% render_field form.username class="form-control" placeholder="Username" %}
-</div>
-
-<div class="form-group">
-  {% render_field form.password1 class="form-control" placeholder="Password" %}
-</div>
-
-<div class="form-group">
-{% render_field form.password2 class="form-control" placeholder="Password Again" %}
-
-</div>
-
-<div class="form-group">
-{% render_field form.email class="form-control" placeholder="Email" %}
-
-</div>
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
-  <hr class="my-4">
-  <center>Already have an account?<a href="{% url 'login' %}">Login</a></center>
-</form>
