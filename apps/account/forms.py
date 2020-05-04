@@ -20,6 +20,10 @@ class LoginForm(forms.Form):
 
 class SignUpForm(UserCreationForm):
     captcha = ReCaptchaField(score_threshold=0.5)
+    username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Username'}))
+    email = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+    password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
+    password2 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password Again'}))
 
     class Meta:
         model = CustomerUser
