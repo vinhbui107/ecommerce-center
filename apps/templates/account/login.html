@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load widget_tweaks %}
+{% load crispy_forms_tags %}
 {% block title %}
     Login | Movie Center
 {% endblock title %}
@@ -49,23 +49,7 @@
                             <p class="text-uppercase text-center EFOr">or</p>
                             <form class="rd-mailform text-left" method="post" action="{% url 'login' %}">
                                 {% csrf_token %}
-                                    {% for error in form.non_field_errors %}
-                                        <div class="alert alert-danger" role="alert">
-                                            {{ error|escape }}
-                                        </div>
-                                    {% endfor %}
-                                <div class="form-group">
-                                    {% render_field form.username class="form-control" placeholder="Username" %}
-                                    {% for error in form.username.errors %}
-                                        <div class="invalid-feedback" style="display: block">{{ error|escape }}</div>
-                                    {% endfor %}
-                                </div>
-                                <div class="form-group">
-                                    {% render_field form.password class="form-control" placeholder="Password" %}
-                                    {% for error in form.password.errors %}
-                                        <div class="invalid-feedback" style="display: block">{{ error|escape }}</div>
-                                    {% endfor %}
-                                </div>
+                                    {{ form|crispy }}
                                 <div class="text-center">
                                   <button class="btn btn-danger" type="submit">SIGN IN</button>
                                 </div>
