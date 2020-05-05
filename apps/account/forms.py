@@ -15,11 +15,10 @@ import re
 
 
 class LoginForm(forms.Form):
-    captcha = ReCaptchaField(score_threshold=0.5)
+    pass
 
 
 class SignUpForm(UserCreationForm):
-    captcha = ReCaptchaField(score_threshold=0.5)
     username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     email = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
@@ -46,8 +45,6 @@ class SignUpForm(UserCreationForm):
 
 
 class UpdateProfileForm(forms.ModelForm):
-    captcha = ReCaptchaField(score_threshold=0.5)
-
     class Meta:
         model = get_user_model()
         fields = ("first_name", "last_name", "email", "address", "phone_number", "photo")
