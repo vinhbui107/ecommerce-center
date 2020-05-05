@@ -12,6 +12,7 @@ from apps.checkout.forms import CheckoutForm
 from apps.account.models import CustomerUser
 from apps.cart.models import Cart
 from apps.checkout.models import Order
+from snowpenguin.django.recaptcha3.fields import ReCaptchaField
 
 
 class CheckoutView(LoginRequiredMixin, View):
@@ -51,6 +52,7 @@ class CheckoutView(LoginRequiredMixin, View):
                 return redirect("/")
 
     def post(self, *args, **kwargs):
+        captcha = ReCaptchaField(score_threshold=0.5)
         form = CheckoutForm(self.request.POST)
         try:
             order = Order.objects.get(user_id=self.request.user, is_complete=False)
