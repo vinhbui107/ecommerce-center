@@ -49,6 +49,18 @@ class UpdateProfileForm(forms.ModelForm):
         model = get_user_model()
         fields = ("first_name", "last_name", "email", "address", "phone_number", "photo")
 
+    def clean_first_name(self):
+        first_name = self.cleaned_data['first_name']
+        if not re.search(r'^\w+$', first_name):
+            raise forms.ValidationError("Letters and numbers only. Please try again without symbols.")
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data['last_name']
+        if not re.search(r'^\w+$', last_name):
+            raise forms.ValidationError("Letters and numbers only. Please try again without symbols.")
+        return last_name
+
 
 class ChangePasswordForm:
     pass
