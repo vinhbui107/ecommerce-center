@@ -61,6 +61,8 @@ DATABASES = {
     }
 }
 
+
+
 # ==============================================================================
 # MIDDLEWARE SETTINGS
 # ==============================================================================
@@ -122,6 +124,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
+
 # ==============================================================================
 # INTERNATIONALIZATION AND LOCALIZATION SETTINGS
 # ==============================================================================
@@ -174,9 +177,31 @@ DEFAULT_FROM_EMAIL = "MovieCenter <noreply@MovieCenter.com>"
 # ==============================================================================
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-
 # recaptcha
 RECAPTCHA_PRIVATE_KEY = '6LesVPIUAAAAAG6yUCpJKc348za_ItyIq0ElsP1V'
 RECAPTCHA_PUBLIC_KEY = '6LesVPIUAAAAANPzZoKAhDS6KmIFqcgp_M5ruLaN'
 RECAPTCHA_DEFAULT_ACTION = 'generic'
 RECAPTCHA_SCORE_THRESHOLD = 0.5
+
+# ==============================================================================
+# SECURITY
+# ==============================================================================
+SESSION_COOKIE_AGE = 3600  # one hour
+
+# Cross site request forgery (CSRF) protection
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+# Cross-site Scripting (XSS)
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+# SSL Redirect
+SECURE_SSL_REDIRECT = False
+
+# # HTTP Strict Transport Security
+# SECURE_HSTS_SECONDS = 86400  # 1 day
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
