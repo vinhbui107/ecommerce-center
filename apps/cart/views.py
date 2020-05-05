@@ -37,19 +37,16 @@ def add_to_cart(request, slug):
         cart = cart_of_user[0]
         # check the movie that has been added to the shopping cart by the user
         if cart.movies.filter(movie__slug=movie.slug).exists():
-            messages.info(request, "This movie was in your cart!")
             return redirect("cart:cart")
         else:
             cart.movies.add(cart_movie)
             cart.save()
-            messages.info(request, "This movie just added to your cart.")
             return redirect("cart:cart")
     else:
         # user current have no cart, we'll create a new cart.
         create_date = datetime.now()
         cart = Cart.objects.create(user_id=request.user, create_date=create_date)
         cart.movies.add(cart_movie)
-        messages.info(request, "This movie just added to your cart.")
         return redirect("cart:cart")
 
 
@@ -68,11 +65,8 @@ def remove_from_cart(request, slug):
             cart.movies.remove(cart_movie)
             cart.save()
             cart_movie.delete()
-            messages.info(request, "This item was removed from your cart.")
             return redirect("cart:cart")
         else:
-            messages.info(request, "This item was not in your cart")
             return redirect("movie:movie-list", slug=slug)
     else:
-        messages.info(request, "You do not have an active order")
         return redirect("movie:movie-list", slug=slug)
