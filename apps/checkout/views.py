@@ -4,6 +4,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.template.loader import render_to_string
+
 from apps.checkout.forms import CheckoutForm
 from apps.account.models import CustomerUser
 from apps.cart.models import Cart
@@ -76,12 +80,23 @@ class CheckoutView(LoginRequiredMixin, View):
                         cart_movie.is_active = False
                         cart_movie.save()
 
+                    # send email success payment
+                    messages = render_to_string("checkout/checkout_email.html", {
+                        'name': order.user_id.username,
+                    })
+                    email = EmailMessage(
+                        "Thank you for purchasing movies",
+                        messages,
+                        settings.DEFAULT_FROM_EMAIL,
+                        [self.request.user.email],
+                    )
+                    email.fail_silently = False
+                    email.send()
+
                 # payment success
-                messages.info(self.request, "Payment success!")
                 return redirect("checkout:checkout-done")
 
             # user input not invalid
-            messages.warning(self.request, "Invalid data received")
             return redirect("/")
 
         # user dont have any order
