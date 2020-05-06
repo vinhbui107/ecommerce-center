@@ -26,6 +26,7 @@ class Movie(models.Model):
     description = models.TextField()
     slug = models.SlugField(default="", unique=True)
     is_active = models.BooleanField(default=True)
+    photo = models.ImageField(upload_to="movie_poster/", blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
