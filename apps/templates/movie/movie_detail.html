@@ -50,9 +50,13 @@
                 <div class="col">
                     <div class="col">
                         <div class="row">
+                            {% if movie.photo %}
                             <div class="col-sm-6"><img class="imge"
-                                    src="http://image.tmdb.org/t/p/original{{ movie.poster }}" alt="{{ movie.title }}">
+                                src="{{ movie.photo.url }}" alt="{{ movie.title }}">
                             </div>
+                            {% else %}
+                            <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
+                            {% endif %}
                             <div class="col-sm-6">
                                 <div id="rating">
                                     <input type="radio" id="star5" name="rating" value="5"/>

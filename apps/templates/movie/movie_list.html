@@ -49,7 +49,11 @@
                 <div class="col-md-8 col-sm-12 col-xs-12">
                     {% for movie in movie_list %}
                         <div class="movie-item-style-2">
-                            <img src="http://image.tmdb.org/t/p/original{{ movie.poster }}" alt="{{ movie.title }}">
+                            {% if movie.photo %}
+                            <img src="{{ movie.photo.url }}" alt="{{ movie.title }}" width="100" height="200">
+                            {% else %}
+                            <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
+                            {% endif %}
                             <div class="mv-item-infor">
                                 <h6><a href="{% url 'movie:movie-detail' movie.slug %}">{{ movie.title }}
                                     <span>( {{ movie.year }} )</span></a></h6>
