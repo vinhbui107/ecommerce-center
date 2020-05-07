@@ -16,3 +16,17 @@ class MovieListView(ListView):
     context_object_name = "movie_list"
     template_name = "movie/movie_list.html"
     paginate_by = 10
+
+
+class SearchMovie(ListView):
+    model = Movie
+    context_object_name = "movie_list"
+    template_name = "movie/search_movie.html"
+    paginate_by = 10
+
+    def get_queryset(self):
+        query = self.request.GET.get('movie_name')
+        if query:
+            return Movie.objects.filter(title__icontains=query)
+        else:
+            return Movie.objects.all()

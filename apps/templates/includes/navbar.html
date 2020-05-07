@@ -195,7 +195,7 @@ html,body{
                     </div>
                     <ul class="navbar-nav ml-auto menu">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{% url 'core:home' %}">HOME</a>
+                            <a class="nav-link active" href="{% url 'core:home' %}">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'movie:movie-list' %}">Movies </a>
@@ -229,8 +229,9 @@ html,body{
                       </li>
                         {% endif %}
                     </ul>
-                    <form action="" class="search-box ">
-                        <input  type="text" class="form-control text search-input" placeholder="Search for ..." />
+                    <form method="GET" action="{% url 'movie:search-movie' %}" class="search-box ">
+                      <input  type="text" class="form-control text search-input" name="movie_name"
+                      type="text" placeholder="Search" value="{{ request.GET.search }}"/>
                     </form>
                 </nav>
             </header>
