@@ -1,258 +1,295 @@
 <style>
-*{
-	box-sizing: border-box;
-	font-family: 'Roboto Slab', serif;
-}
+  * {
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+  }
 
-html,body{
-	width: 100%;
-	height: 100%;
-}
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
 
-.header-nav {
-  position: relative ;
-  left: 60%;
-  padding-right: 3em;
- }
-  .header-nav:before, .header-nav:after {
-    content: '';
+  .header-nav {
+    position: relative;
+    left: 60%;
+    padding-right: 3em;
+  }
+  .header-nav:before,
+  .header-nav:after {
+    content: "";
     display: table;
   }
   .header-nav:after {
     clear: both;
- }
+  }
 
-.menu {
-  display: inline-block;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-.menu li {
-  display: inline-block;
-}
-.menu li a {
-  display: block;
-  padding: 10px;
-  position: relative;
-  transition: color 0.3s;
-  text-decoration: none;
-}
+  .menu {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .menu li {
+    display: inline-block;
+  }
+  .menu li a {
+    display: block;
+    padding: 10px;
+    position: relative;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
 
-.search-button {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translate(0, -50%);
-}
+  .search-button {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 
-.search-toggle {
-  position: relative;
-  display: block;
-  height: 12px;
-  width: 12px;
-}
-.search-toggle::before, .search-toggle::after {
-  content: '';
-  position: absolute;
-  display: block;
-  transition: all 0.1s;
-}
-.search-toggle::before {
+  .search-toggle {
+    position: relative;
+    display: block;
+    height: 12px;
+    width: 12px;
+  }
+  .search-toggle::before,
+  .search-toggle::after {
+    content: "";
+    position: absolute;
+    display: block;
+    transition: all 0.1s;
+  }
+  .search-toggle::before {
     border: 2px solid #f3f3f3;
     border-radius: 50%;
     width: 100%;
     height: 100%;
     left: -2px;
     top: -2px;
-}
-.search-toggle::after {
+  }
+  .search-toggle::after {
     height: 2px;
     width: 7px;
     background: #f3f3f3;
     top: 10px;
     left: 8px;
     transform: rotate(45deg);
-}
-.search-toggle.active::before {
+  }
+  .search-toggle.active::before {
     width: 0;
     border-width: 1px;
     border-radius: 0;
     transform: rotate(45deg);
     top: -1px;
     left: 4px;
-}
-.search-toggle.active::after {
+  }
+  .search-toggle.active::after {
     width: 12px;
     left: -1px;
     top: 4px;
-}
+  }
 
-#header-1 .search-box {
-  position: absolute;
-  top: 100%;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  max-height: 0;
-  transform: translateY(100%);
-  background-color: #F8FBEF;
-  color: #130202;
-  transition: all 0.3s;
-  z-index: 999;
-}
-#header-1 .search-box .search-input {
-      width: 100%;
-      height: 100%;
-      padding: 0 1em;
-      background-color: transparent;
-      opacity: 0;
-      color: rgb(7, 0, 0);
-}
-::placeholder{
-  color: #ddcccc !important;
-  opacity: 0.5;
-}
-#header-1 .search-box .search-input::-webkit-input-placeholder {
-        color: rgba(255, 255, 255, 0.4);
-      }
-#header-1.show .search-box {
+  #header-1 .search-box {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 0;
+    transform: translateY(100%);
+    background-color: #f8fbef;
+    color: #130202;
+    transition: all 0.3s;
+    z-index: 999;
+  }
+  #header-1 .search-box .search-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 1em;
+    background-color: transparent;
+    opacity: 0;
+    color: rgb(7, 0, 0);
+  }
+  ::placeholder {
+    color: #ddcccc !important;
+    opacity: 0.5;
+  }
+  #header-1 .search-box .search-input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.4);
+  }
+  #header-1.show .search-box {
     max-height: 40px;
-}
-    #header-1.show .search-box .search-input {
-      opacity: 1;
-}
+  }
+  #header-1.show .search-box .search-input {
+    opacity: 1;
+  }
 
-/*------------------------------------------*/
-.navbar {
-        background-color: #130202 !important;
-        height: 70px;
-}
+  /*------------------------------------------*/
+  .navbar {
+    background-color: #130202 !important;
+    height: 70px;
+  }
 
-.navbar li {
-        margin-right: 2em;
-}
+  .navbar li {
+    margin-right: 2em;
+  }
 
-.navbar li a{
-        color: #fff;
-}
-.navbar li a:hover {
-        list-style-type: none;
-        background-color: #d81a24;
-        width: auto;
-        height: 40px;
-        border-radius: 10px;
-        transition: 0.3s;
-    }
+  .navbar li a {
+    color: #fff;
+  }
+  .navbar li a:hover {
+    list-style-type: none;
+    background-color: #d81a24;
+    width: auto;
+    height: 40px;
+    border-radius: 10px;
+    transition: 0.3s;
+  }
 
-.dropdown{
-        position: relative;
-        display: inline-block;
-}
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
 
-    /*sub-menu*/
-.dropdown-menu{
-        display: none;
-        position: absolute;
-        width: auto;
-        background: #151515;
-        margin-top: auto;
-        top: 100%;
-        z-index: 999;
-        text-decoration: none;
-        transition: all 0.1s 0.1s ease-in;
-        -moz-transition: all 0.1s 0.1s ease-in;
-        -webkit-transition: all 0.1s 0.1s ease-in;
-}
-.dropdown:hover .dropdown-menu{
-        display: block;
-        text-decoration: none;
-}
+  /*sub-menu*/
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    width: auto;
+    background: #151515;
+    margin-top: auto;
+    top: 100%;
+    z-index: 999;
+    text-decoration: none;
+    transition: all 0.1s 0.1s ease-in;
+    -moz-transition: all 0.1s 0.1s ease-in;
+    -webkit-transition: all 0.1s 0.1s ease-in;
+  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    text-decoration: none;
+  }
 
-.dropdown-item:focus, .dropdown-item:hover {
-        color: red;
-        background-color: #130202 !important;
-        height: auto !important;
-}
-
+  .dropdown-item:focus,
+  .dropdown-item:hover {
+    color: red;
+    background-color: #130202 !important;
+    height: auto !important;
+  }
 </style>
 
 <header>
-<!-- new Navbar -->
+  <!-- new Navbar -->
   <nav class="navbar navbar-expand-md sticky-top">
     <div id="menuTop" class="container">
-        <a class="navbar-branch" href="/">
-            <img src="https://livedemo00.template-help.com/wt_prod-20691/images/logo-default.png">
-        </a>
-        <button class="navbar-toggler collapsed" aria-expanded="false" aria-controls="navbarExample01" aria-label="Toggle navigation" type="button" data-target="#navbarsExample01" data-toggle="collapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbarExample01">
-            <header id="header-1" class="header">
-                <nav class="header-nav">
-                    <div class="search-button">
-                        <a href="#" class="search-toggle" data-selector="#header-1"></a>
-                    </div>
-                    <ul class="navbar-nav ml-auto menu">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{% url 'core:home' %}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'movie:movie-list' %}">Movies </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'core:about' %}"> About</a>
-                      </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{% url 'core:contact' %}">Contact</a>
-                        </li>
-                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>
-                          <a class="list-item" href="{% url 'cart:cart' %}"><i class="fas fa-shopping-cart"></i></a>
-                        </li>
-                          {% if user.is_authenticated %}
-                           {% if messages %}
-                          {% for message in messages %}
-                        <li><script>alert("{{ message }}")</script></li>
-                          {% endfor %}
-                           {% endif %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="SearchButton">{{ user.username }}
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/account/profile">Update Profile</a>
-                                <a class="dropdown-item" href="{% url 'logout' %}">Sign Out</a>
-                            </div>
-                        </li>
-                        {% else %}
-                        <li class="nav-item">
-                          <a class="nav-link" href="{% url 'login' %}">Sign In</a>
-                      </li>
-                        {% endif %}
-                    </ul>
-                    <form method="GET" action="{% url 'movie:search-movie' %}" class="search-box ">
-                      <input  type="text" class="form-control text search-input" name="movie_name"
-                      type="text" placeholder="Search" value="{{ request.GET.search }}"/>
-                    </form>
-                </nav>
-            </header>
-        </div>
-  </div>
-</nav>
+      <a class="navbar-branch" href="/">
+        <img
+          src="https://livedemo00.template-help.com/wt_prod-20691/images/logo-default.png"
+        />
+      </a>
+      <button
+        class="navbar-toggler collapsed"
+        aria-expanded="false"
+        aria-controls="navbarExample01"
+        aria-label="Toggle navigation"
+        type="button"
+        data-target="#navbarsExample01"
+        data-toggle="collapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse collapse" id="navbarExample01">
+        <header id="header-1" class="header">
+          <nav class="header-nav">
+            <div class="search-button">
+              <a href="#" class="search-toggle" data-selector="#header-1"></a>
+            </div>
+            <ul class="navbar-nav ml-auto menu">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'core:home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'movie:movie-list' %}"
+                  >Movies
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'core:about' %}"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'core:contact' %}">Contact</a>
+              </li>
+              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                <a class="list-item" href="{% url 'login' %}"
+                  ><i class="fas fa-shopping-cart"></i
+                ></a>
+              </li>
+              {% if user.is_authenticated %}
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  data-toggle="dropdown"
+                  id="SearchButton"
+                  >{{ user.username }}
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/account/profile"
+                    >Update Profile</a
+                  >
+                  <a class="dropdown-item" href="{% url 'logout' %}"
+                    >Sign Out</a
+                  >
+                </div>
+              </li>
+              {% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Sign In</a>
+              </li>
+              {% endif %}
+            </ul>
+            <form
+              method="GET"
+              action="{% url 'movie:search-movie' %}"
+              class="search-box"
+            >
+              <input
+                type="text"
+                class="form-control text search-input"
+                name="movie_name"
+                type="text"
+                placeholder="Search"
+                value="{{ request.GET.search }}"
+              />
+            </form>
+          </nav>
+        </header>
+      </div>
+    </div>
+  </nav>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
 
-<script type="text/javascript">
-    $('.header').on('click', '.search-toggle', function(e) {
-        var selector = $(this).data('selector');
+  <script type="text/javascript">
+    $(".header").on("click", ".search-toggle", function (e) {
+      var selector = $(this).data("selector");
 
-        $(selector).toggleClass('show').find('.search-input').focus();
-        $(this).toggleClass('active');
+      $(selector).toggleClass("show").find(".search-input").focus();
+      $(this).toggleClass("active");
 
-        e.preventDefault();
-});
-</script>
-
-
+      e.preventDefault();
+    });
+  </script>
 </header>
