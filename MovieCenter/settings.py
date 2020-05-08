@@ -153,7 +153,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
-MEDIA_URL = "/media/"
+MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 # ==============================================================================
@@ -189,20 +189,20 @@ RECAPTCHA_SCORE_THRESHOLD = 0.5
 # ==============================================================================
 SESSION_COOKIE_AGE = 3600  # one hour
 
-# Cross site request forgery (CSRF) protection
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+# # Cross site request forgery (CSRF) protection
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
-# Cross-site Scripting (XSS)
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
+# # Cross-site Scripting (XSS)
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# SSL Redirect
-SECURE_SSL_REDIRECT = False
+# # SSL Redirect
+# SECURE_SSL_REDIRECT = False
 
-# # HTTP Strict Transport Security
-# SECURE_HSTS_SECONDS = 86400  # 1 day
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
+# # # HTTP Strict Transport Security
+# # SECURE_HSTS_SECONDS = 86400  # 1 day
+# # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# # SECURE_HSTS_PRELOAD = True
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+# X_FRAME_OPTIONS = 'SAMEORIGIN'
