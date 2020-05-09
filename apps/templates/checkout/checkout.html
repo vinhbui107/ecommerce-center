@@ -27,16 +27,16 @@
         </nav>
     </section>
 
-	<div class="container">
-		<br>
-		<h3><strong>YOUR CHOICES</strong></h3>
-		<br>
+    <div class="container">
+        <br>
+        <h3><strong>YOUR CHOICES</strong></h3>
+        <br>
         <table class="table table-hover text-left">
             <thead class="bg-danger">
             <tr class="bg-accent">
                 <th class="text-light">Movie</th>
-				<th></th>
-				<th></th>
+                <th></th>
+                <th></th>
                 <th class="text-light">Price</th>
             </tr>
             </thead>
@@ -47,44 +47,38 @@
                             {{ cart_movie.movie.title }}
                         </a>
                     </td>
-					<td></td>
                     <td></td>
-					<td class="text-body">
+                    <td></td>
+                    <td class="text-body">
                         {{ cart_movie.movie.price }} $
                     </td>
                 </tr>
             {% endfor %}
             <tr>
                 <td><strong>Total</strong></td>
-				<td></td>
-				<td></td>
+                <td></td>
+                <td></td>
                 <td><strong>{{ cart.get_total }} $</strong></td>
             </tr>
             <tr></tr>
         </table>
-	</div>
+    </div>
 
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div class="card card-signin my-5">
                 <div class="card-body">
-                    <form novalidate method="post" action="{% url 'checkout:checkout' %}">
+                    <form class="rd-mailform text-left" method="post" action="{% url 'checkout:payment' %}">
                         {% csrf_token %}
-                        <h3><strong>YOUR SHIPPING INFORMATION</strong></h3>
-						<br>
-                        {{ form |crispy }} {% if redirect_field_value %}
-                        <input
-                                type="hidden"
-                                name="{{ redirect_field_name }}"
-                                value="{{ redirect_field_value }}"
-                        />
-                    {% endif %}
-                        <button
-                                class="btn btn-lg btn-danger btn-block text-uppercase"
-                                type="submit"
-                        >
-                            PAYMENT
-                        </button>
+                        {{ form | crispy }}
+                        {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}"
+                                   value="{{ redirect_field_value }}"/>
+                        {% endif %}
+                        <div class="text-center">
+                            <button class="btn btn-danger" type="submit">SIGN UP</button>
+                        </div>
+                        <hr class="my-4">
                     </form>
                 </div>
             </div>
