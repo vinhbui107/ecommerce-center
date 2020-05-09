@@ -49,8 +49,8 @@
                 <div class="col-md-8 col-sm-12 col-xs-12">
                     {% for movie in movie_list %}
                         <div class="movie-item-style-2">
-                            {% if movie.photo %}
-                            <img src="{{ movie.photo.url }}" alt="{{ movie.title }}" width="100" height="200">
+                            {% if movie.poster %}
+                            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" width="200" height="300">
                             {% else %}
                             <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
                             {% endif %}

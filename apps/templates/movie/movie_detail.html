@@ -50,9 +50,9 @@
                 <div class="col">
                     <div class="col">
                         <div class="row">
-                            {% if movie.photo %}
+                            {% if movie.poster %}
                             <div class="col-sm-6"><img class="imge"
-                                src="{{ movie.photo.url }}" alt="{{ movie.title }}">
+                                src="{{ movie.poster.url }}" alt="{{ movie.title }}">
                             </div>
                             {% else %}
                             <img class="card-img-top" src="{% static 'img/no-avatar.png' %}" alt="">
@@ -100,8 +100,7 @@
                 </div>
                 <div class="col">
                     <div>
-                        <iframe width="550" height="410" src="https://www.youtube.com/embed/UUkn-enk2RU" frameborder="0"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        <iframe width="550" height="410" src="{{ movie.trailer }}" frameborder="0"
                                 allowfullscreen></iframe>
                     </div>
                 </div>
