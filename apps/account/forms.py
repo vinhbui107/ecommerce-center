@@ -61,6 +61,10 @@ class UpdateProfileForm(forms.ModelForm):
             raise forms.ValidationError("Letters and numbers only. Please try again without symbols.")
         return last_name
 
+    def __init__(self, *args, **kwargs):
+        super(UpdateProfileForm, self).__init__(*args, **kwargs)
+        self.fields['email'].disabled = True
+
 
 class ChangePasswordForm:
     pass
