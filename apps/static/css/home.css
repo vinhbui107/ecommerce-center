@@ -245,43 +245,44 @@ body {
 .newsletter_footer{
   margin-bottom: 20px;
   margin-top: 30px;
+  text-align: center;
+
+
 }
-.newsletter_content .input_mail{
+.newsletter_footer .input{
+  margin: 8px;
   position: relative;
-  left: 450px;
-  bottom: 0px;
   height: 55px;
   border-radius: 0.25rem;
   width: 280px;
   padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
   border: 1px solid rgba(246, 246, 246, 0.3);
   border-radius: 4px;
   box-sizing: border-box;
   background-color: rgba(246, 246, 246, 0.3);
+  text-align: center;
+
 }
 
-.newsletter_footer .btn-custom a{
+.newsletter_footer a{
+
   position: relative;
   border: 1px solid red;
   color: white;
   background-color: red;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+
   font-size: 17px;
   border-radius: 4px;
-  left: 750px;
-  bottom: 65px;
   padding: 15px 40px;
-  display: inline-block;
   transition: all 0.2s;
 }
 .newsletter_footer .btn-custom a:hover{
   color: red;
   background-color: rgb(246, 246, 246,0.1);
 }
+
 /* TESTIMONIAL */
 .testimonial{
   margin-top: 90px;
