@@ -221,12 +221,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'core:contact' %}">Contact</a>
               </li>
+
+              {% if user.is_authenticated %}
               <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
-                <a class="list-item" href="{% url 'login' %}"
+                <a class="list-item" href="{% url 'cart:cart' %}"
                   ><i class="fas fa-shopping-cart"></i
                 ></a>
               </li>
-              {% if user.is_authenticated %}
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
@@ -245,6 +246,11 @@
                 </div>
               </li>
               {% else %}
+              <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                <a class="list-item" href="{% url 'login' %}"
+                  ><i class="fas fa-shopping-cart"></i
+                ></a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">Sign In</a>
               </li>
