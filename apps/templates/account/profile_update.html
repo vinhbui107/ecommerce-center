@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load widget_tweaks %}
 {% load crispy_forms_tags %}
 
 {% load static %}
@@ -54,7 +54,25 @@
 
         <form novalidate method="post" action="." enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form|crispy }}
+            <div class="form-group">
+                {% render_field form.first_name|as_crispy_field %}
+              </div>
+            <div class="form-group">
+                {% render_field form.last_name|as_crispy_field %}
+              </div>
+              <div class="form-group" >
+                {% render_field form.email|as_crispy_field %}
+              </div>
+             <div class="form-group">
+                {% render_field form.address|as_crispy_field %}
+              </div>
+              <div class="form-group">
+                {% render_field form.phone_number|as_crispy_field %}
+              </div>
+              <div class="form-group">
+                {% render_field form.photo|as_crispy_field %}
+              </div>
+              {% render_field form.captcha|as_crispy_field %}
             {% if redirect_field_value %}
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
             {% endif %}

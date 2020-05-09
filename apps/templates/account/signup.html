@@ -58,28 +58,20 @@
                                     {% render_field form.username|as_crispy_field %}
                                 </div>
 
-                                <div class="form-group" placeholder="Email">
-                                    {% render_field form.password1|as_crispy_field %}
-                                </div>
-
-                                <div class="form-group">
-                                    {% render_field form.password2|as_crispy_field %}
-                                </div>
-
-                                <div class="form-group">
-                                    {% render_field form.email|as_crispy_field %}
-                                </div>
-
-                                {% if redirect_field_value %}
-                                    <input type="hidden" name="{{ redirect_field_name }}"
-                                           value="{{ redirect_field_value }}"/>
-                                {% endif %}
-                                <div class="text-center">
-                                    <button class="btn btn-danger" type="submit">SIGN UP</button>
-                                </div>
-                                <hr class="my-4">
-                                <center>Already have an account?<a href="{% url 'login' %}"> Login</a></center>
-                            </form>
+                    <div class="form-group">
+                      {% render_field form.password2|as_crispy_field  %}
+                    </div>
+                    <div class="form-group">
+                      {% render_field form.email|as_crispy_field  %}
+                    </div>
+                    <div class="form-group">
+                    {% render_field form.captcha|as_crispy_field %}
+                    </div>
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                        <div class="text-center">
+                          <button class="btn btn-danger" type="submit">SIGN UP</button>
                         </div>
                     </div
                 </div>

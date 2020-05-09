@@ -1,6 +1,8 @@
 from django.views.generic import DetailView, ListView
 
 from .models import Movie
+import re
+from django import forms
 
 
 class MovieDetailView(DetailView):
@@ -26,7 +28,8 @@ class SearchMovie(ListView):
 
     def get_queryset(self):
         query = self.request.GET.get('movie_name')
+        result = Movie.objects.filter(title__icontains=query)
         if query:
-            return Movie.objects.filter(title__icontains=query)
+            return result
         else:
             return Movie.objects.all()

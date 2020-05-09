@@ -29,13 +29,14 @@ INSTALLED_APPS = [
     "crispy_forms",
     "debug_toolbar",
     "widget_tweaks",
-    'snowpenguin.django.recaptcha3',
+    # 'snowpenguin.django.recaptcha3',
     # Local
     "apps.account",
     "apps.cart",
     "apps.core",
     "apps.checkout",
     "apps.movie",
+    "captcha",
 ]
 
 SITE_ID = 1
@@ -178,12 +179,15 @@ DEFAULT_FROM_EMAIL = "MovieCenter <noreply@MovieCenter.com>"
 # ==============================================================================
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
-# recaptcha
-RECAPTCHA_PRIVATE_KEY = '6LesVPIUAAAAAG6yUCpJKc348za_ItyIq0ElsP1V'
-RECAPTCHA_PUBLIC_KEY = '6LesVPIUAAAAANPzZoKAhDS6KmIFqcgp_M5ruLaN'
-RECAPTCHA_DEFAULT_ACTION = 'generic'
-RECAPTCHA_SCORE_THRESHOLD = 0.5
+# recaptcha v2
+RECAPTCHA_PRIVATE_KEY = '6LcS1_QUAAAAAKY8Cb19HUbH0njc12hJ5fkBrDbr'
+RECAPTCHA_PUBLIC_KEY = '6LcS1_QUAAAAAKGogcDJIdM2B-kEs1zR8yjj8jNK'
 
+# recaptcha v3
+# RECAPTCHA_PRIVATE_KEY = '6LesVPIUAAAAAG6yUCpJKc348za_ItyIq0ElsP1V'
+# RECAPTCHA_PUBLIC_KEY = '6LesVPIUAAAAANPzZoKAhDS6KmIFqcgp_M5ruLaN'
+# RECAPTCHA_DEFAULT_ACTION = 'generic'
+# RECAPTCHA_SCORE_THRESHOLD = 0.5
 # ==============================================================================
 # SECURITY
 # ==============================================================================

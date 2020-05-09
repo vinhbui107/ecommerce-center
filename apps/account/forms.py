@@ -10,7 +10,8 @@ from django.contrib.auth.forms import (
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from .models import CustomerUser
-from snowpenguin.django.recaptcha3.fields import ReCaptchaField
+# from snowpenguin.django.recaptcha3.fields import ReCaptchaField
+from captcha.fields import ReCaptchaField
 import re
 
 
@@ -19,6 +20,7 @@ class LoginForm(forms.Form):
 
 
 class SignUpForm(UserCreationForm):
+    captcha = ReCaptchaField(label="",)
     username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Username'}))
     email = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
@@ -26,7 +28,7 @@ class SignUpForm(UserCreationForm):
 
     class Meta:
         model = CustomerUser
-        fields = ("username", "email", "address", "phone_number")
+        fields = ("username", "email", "address", "phone_number", "captcha")
         field_classes = {"username": UsernameField}
 
     def clean_username(self):
@@ -45,9 +47,11 @@ class SignUpForm(UserCreationForm):
 
 
 class UpdateProfileForm(forms.ModelForm):
+    captcha = ReCaptchaField()
+    
     class Meta:
         model = get_user_model()
-        fields = ("first_name", "last_name", "email", "address", "phone_number", "photo")
+        fields = ("first_name", "last_name", "email", "address", "phone_number", "photo", "captcha")
 
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']
@@ -60,6 +64,10 @@ class UpdateProfileForm(forms.ModelForm):
         if not re.search(r'^\w+$', last_name):
             raise forms.ValidationError("Letters and numbers only. Please try again without symbols.")
         return last_name
+
+    def __init__(self, *args, **kwargs):
+        super(UpdateProfileForm, self).__init__(*args, **kwargs)
+        self.fields['email'].disabled = True
 
 
 class ChangePasswordForm:

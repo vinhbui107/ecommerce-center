@@ -7,12 +7,13 @@ from django.views.generic import FormView, CreateView
 from .forms import LoginForm, SignUpForm, UpdateProfileForm
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
-from snowpenguin.django.recaptcha3.fields import ReCaptchaField
+# from snowpenguin.django.recaptcha3.fields import ReCaptchaField
+from captcha.fields import ReCaptchaField
 
 
 @login_required
 def profile(request):
-    captcha = ReCaptchaField(score_threshold=0.5)
+    # captcha = ReCaptchaField(score_threshold=0.5)
     user = request.user
     if request.method == "POST":
         form = UpdateProfileForm(request.POST, instance=user, files=request.FILES)
@@ -34,7 +35,7 @@ class SiteLoginView(LoginView):
 
 
 class SiteSignupView(CreateView):
-    captcha = ReCaptchaField(score_threshold=0.5)
+    # captcha = ReCaptchaField(score_threshold=0.5)
     template_name = "account/signup.html"
     form_class = SignUpForm
     success_url = reverse_lazy("login")
