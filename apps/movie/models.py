@@ -21,12 +21,11 @@ class Movie(models.Model):
     year = models.CharField(max_length=4)
     imdb_score = models.DecimalField(max_digits=9, decimal_places=2)
     imdb_link = models.URLField(default="")
-    poster = models.CharField(max_length=50)
     trailer = models.URLField(default="", null=True)
     description = models.TextField()
     slug = models.SlugField(default="", unique=True)
     is_active = models.BooleanField(default=True)
-    photo = models.ImageField(upload_to="movie_poster/", blank=True)
+    poster = models.ImageField(upload_to="movie_poster/", blank=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
