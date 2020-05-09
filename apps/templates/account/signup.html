@@ -10,97 +10,80 @@
 
 {% block cssblock %}
     <link rel="stylesheet" href="{% static 'css/account/login.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 {% endblock cssblock %}
 
 {% block content %}
-<!--using for all tempaltes-->
-<section class="relative">
-    <div class="container">
-        <div class="jumbotron text-center">
-        <h1 class="separator">Welcome</h1>
-        <span class="font-weight-bold">movie center</span>
-        </div>
-    </div>
-</section>
-
-<nav aria-label="breadcrumb" class="bg-light section-xl">
-    <ol class="breadcrumb">
-    <li class="breadcrumb-item">  <a class="mau" href="#">Home</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Sign Up</li>
-    </ol>
-</nav>
-<!--end -->
-<!--<div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-        <div class="card card-signin my-5">
-            <div class="card-body">
-                <form novalidate method="post" action="{% url 'signup' %}">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    {% if redirect_field_value %}
-                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                    {% endif %}
-                    <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign up</button>
-                    <hr class="my-4">
-                    Already have an account?<a href="{% url 'login' %}">Login</a>
-                </form>
+    <!--using for all tempaltes-->
+    <section class="relative">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 class="separator">Welcome</h1>
+                <span class="font-weight-bold">movie center</span>
             </div>
         </div>
-    </div>
-</div>-->
+    </section>
 
+    <nav aria-label="breadcrumb" class="bg-light section-xl">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a class="mau" href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Sign Up</li>
+        </ol>
+    </nav>
+    <!--end -->
 
-<section class="part section section-inset-1">
-  <div class="container">
-      <h2 class="sigin">create a new account</h2>
-      <hr>
-      <div class="row justify-content-center">
-          <div class="col-12 col-xl-8 ">
-              <div class="btn-group-variant text-center ">
-                  <a class="btn btn-primary btn-lg btn-facebook mr-4 fm-size" href="#"><i
-                          class="fab fa-facebook-f"></i> Facebook</a>
-                  <a class="btn btn-info btn-lg btn-twitter" href="#"><i class="fab fa-twitter"></i>Twitter</a>
-                  <a class="btn btn-danger btn-lg btn-gplus ml-4" href="#"><i
-                          class="fab fa-google-plus-g pr-1"></i> Google+</a>
-              </div>
-
-              <div class="row justify-content-center offset-custom-5">
-                  <div class="col-xl-6 col-xl offset-custom-3">
-                      <p class="text-uppercase text-center EFOr">or</p>
-                      <form class="rd-mailform text-left" method="post" action="{% url 'signup' %}">
-                        {% csrf_token %}
-                    <div class="form-group">
-                      {% render_field form.username|as_crispy_field %}
+    <section class="part section section-inset-1">
+        <div class="container">
+            <h2 class="sigin">create a new account</h2>
+            <hr>
+            <div class="row justify-content-center">
+                <div class="col-12 col-xl-8 ">
+                    <div class="btn-group-variant text-center ">
+                        <a class="btn btn-primary btn-lg btn-facebook mr-4 fm-size" href="#"><i
+                                class="fab fa-facebook-f"></i> Facebook</a>
+                        <a class="btn btn-info btn-lg btn-twitter" href="#"><i class="fab fa-twitter"></i>Twitter</a>
+                        <a class="btn btn-danger btn-lg btn-gplus ml-4" href="#"><i
+                                class="fab fa-google-plus-g pr-1"></i> Google+</a>
                     </div>
 
-                    <div class="form-group" placeholder="Email">
-                      {% render_field form.password1|as_crispy_field %}
-                    </div>
+                    <div class="row justify-content-center offset-custom-5">
+                        <div class="col-xl-6 col-xl offset-custom-3">
+                            <p class="text-uppercase text-center EFOr">or</p>
+                            <form class="rd-mailform text-left" method="post" action="{% url 'signup' %}">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {% render_field form.username|as_crispy_field %}
+                                </div>
 
-                    <div class="form-group">
-                      {% render_field form.password2|as_crispy_field  %}
-                    </div>
+                                <div class="form-group" placeholder="Email">
+                                    {% render_field form.password1|as_crispy_field %}
+                                </div>
 
-                    <div class="form-group">
-                      {% render_field form.email|as_crispy_field  %}
-                    </div>
+                                <div class="form-group">
+                                    {% render_field form.password2|as_crispy_field %}
+                                </div>
 
-                        {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
-                        <div class="text-center">
-                          <button class="btn btn-danger" type="submit">SIGN UP</button>
+                                <div class="form-group">
+                                    {% render_field form.email|as_crispy_field %}
+                                </div>
+
+                                {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                           value="{{ redirect_field_value }}"/>
+                                {% endif %}
+                                <div class="text-center">
+                                    <button class="btn btn-danger" type="submit">SIGN UP</button>
+                                </div>
+                                <hr class="my-4">
+                                <center>Already have an account?<a href="{% url 'login' %}"> Login</a></center>
+                            </form>
                         </div>
-                        <hr class="my-4">
-                        <center>Already have an account?<a href="{% url 'login' %}"> Login</a></center>
-                      </form>
-                  </div>
-              </div
-          </div>
-      </div>
-  </div>
-</section>
+                    </div
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock content %}
