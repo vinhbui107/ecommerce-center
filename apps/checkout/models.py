@@ -7,9 +7,9 @@ from django.utils import timezone
 class Order(models.Model):
     user_id = models.ForeignKey(CustomerUser, on_delete=models.CASCADE)
     cart_id = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    fullname = models.CharField(max_length=100, null=True)
-    shipping_address = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=10)
+    fullname = models.CharField(default="", max_length=100, null=True)
+    shipping_address = models.CharField(default="", max_length=255)
+    phone_number = models.IntegerField(null=True)
     order_description = models.CharField(default="", max_length=255)
     order_total = models.DecimalField(max_digits=9, decimal_places=2)
     is_complete = models.BooleanField(default=False)
