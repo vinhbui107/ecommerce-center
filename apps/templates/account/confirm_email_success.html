@@ -9,9 +9,6 @@
 
 {% block cssblock %}
     <link rel="stylesheet" href="{% static 'css/account/signup.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 {% endblock cssblock %}
 
 {% block content %}
@@ -38,8 +35,7 @@
             <p>
               <h1>Check your inbox.</h1>
               <p>
-                We've emailed you instructions for confirm email register. You should receive
-                the email shortly!
+                You have successfully confirmed the email.
               </p>
             </p>
             <a class="btn btn-danger" href="{% url 'login' %}">Login</a>
