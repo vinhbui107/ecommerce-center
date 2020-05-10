@@ -1,8 +1,6 @@
 from django.views.generic import DetailView, ListView
 
 from .models import Movie
-import re
-from django import forms
 
 
 class MovieDetailView(DetailView):
@@ -15,6 +13,7 @@ class MovieDetailView(DetailView):
 
 class MovieListView(ListView):
     model = Movie
+    queryset = Movie.objects.order_by("year")
     context_object_name = "movie_list"
     template_name = "movie/movie_list.html"
     paginate_by = 10
