@@ -16,7 +16,6 @@ DEBUG = config("DEBUG", default=True, cast=bool)
 # DEBUG = False
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -29,6 +28,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "debug_toolbar",
     "widget_tweaks",
+    'six',
     # 'snowpenguin.django.recaptcha3',
     # Local
     "apps.account",
@@ -61,8 +61,6 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
-
-
 
 # ==============================================================================
 # MIDDLEWARE SETTINGS
@@ -107,14 +105,15 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
+    'apps.account.authentication.EmailAuthBackend',
 )
 
 LOGIN_REDIRECT_URL = "core:home"
@@ -125,7 +124,6 @@ ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-
 
 # ==============================================================================
 # INTERNATIONALIZATION AND LOCALIZATION SETTINGS
