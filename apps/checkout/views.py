@@ -1,8 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View, TemplateView
-from django.forms.models import inlineformset_factory
 from django.core.exceptions import ObjectDoesNotExist
-from django.contrib import messages
 from django.shortcuts import redirect, render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import EmailMessage
@@ -10,11 +8,9 @@ from django.conf import settings
 from django.template.loader import render_to_string
 
 from apps.checkout.forms import CheckoutForm
-from apps.account.models import CustomerUser
 from apps.cart.models import Cart
 from apps.checkout.models import Order
-from snowpenguin.django.recaptcha3.fields import ReCaptchaField
-from django.http.response import HttpResponseRedirect, HttpResponse
+from django.http.response import HttpResponseRedirect
 from django.urls import reverse_lazy
 
 

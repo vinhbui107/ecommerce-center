@@ -2,27 +2,17 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import (
     UserCreationForm,
-    AuthenticationForm,
-    PasswordChangeForm,
-    UserChangeForm,
     UsernameField,
 )
-from django.contrib.auth.models import User
-from django.core.exceptions import ObjectDoesNotExist
 from .models import CustomerUser
-# from snowpenguin.django.recaptcha3.fields import ReCaptchaField
 from captcha.fields import ReCaptchaField
 import re
-
-
-class LoginForm(forms.Form):
-    pass
 
 
 class SignUpForm(UserCreationForm):
     captcha = ReCaptchaField(label="",)
     username = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Username'}))
-    email = forms.CharField(label="", widget=forms.TextInput(attrs={'placeholder': 'Email'}))
+    email = forms.EmailField(label="", max_length=150, widget=forms.EmailInput(attrs={'placeholder': 'Email'}))
     password1 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
     password2 = forms.CharField(label="", widget=forms.PasswordInput(attrs={'placeholder': 'Password Again'}))
 
@@ -42,7 +32,7 @@ class SignUpForm(UserCreationForm):
     def clean_email(self):
         email = self.cleaned_data['email']
         if CustomerUser.objects.filter(email=email).exists():
-            raise forms.ValidationError('Your email address is not unique')
+            raise forms.ValidationError('Your email address is already registered.')
         return email
 
 
