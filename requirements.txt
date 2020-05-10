@@ -9,4 +9,5 @@ sorl-thumbnail==12.6.3
 python-decouple==3.3
 django-widget-tweaks==1.4.8
 django-recaptcha3
-python-reCAPTCHA
+django-recaptcha
+six
