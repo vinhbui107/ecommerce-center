@@ -58,26 +58,27 @@
                                     {% render_field form.username|as_crispy_field %}
                                 </div>
                                 <div class="form-group">
-                                    {% render_field form.password1|as_crispy_field  %}
-                                  </div>
-                    <div class="form-group">
-                      {% render_field form.password2|as_crispy_field  %}
+                                    {% render_field form.password1|as_crispy_field %}
+                                </div>
+                                <div class="form-group">
+                                    {% render_field form.password2|as_crispy_field %}
+                                </div>
+                                <div class="form-group">
+                                    {% render_field form.email|as_crispy_field %}
+                                </div>
+                                <div class="form-group">
+                                    {% render_field form.captcha|as_crispy_field %}
+                                </div>
+                                {% if redirect_field_value %}
+                                    <input type="hidden" name="{{ redirect_field_name }}"
+                                           value="{{ redirect_field_value }}"/>
+                                {% endif %}
+                                <div class="text-center">
+                                    <button class="btn btn-danger" type="submit">SIGN UP</button>
+                                </div>
+                        </div
                     </div>
-                    <div class="form-group">
-                      {% render_field form.email|as_crispy_field  %}
-                    </div>
-                    <div class="form-group">
-                    {% render_field form.captcha|as_crispy_field %}
-                    </div>
-                    {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
-                        <div class="text-center">
-                          <button class="btn btn-danger" type="submit">SIGN UP</button>
-                        </div>
-                    </div
                 </div>
             </div>
-        </div>
     </section>
 {% endblock content %}
