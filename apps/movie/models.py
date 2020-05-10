@@ -5,7 +5,7 @@ from django.shortcuts import reverse
 
 class Actor(models.Model):
     name = models.CharField(max_length=30)
-    photo = models.CharField(default="No photo", max_length=50)
+    photo = models.ImageField(upload_to="actor_photo/", blank=True)
 
     def __str__(self):
         return self.name
