@@ -3,6 +3,9 @@ from django.contrib.auth import views as auth_views
 from .views import (
     profile,
     profile_success,
+    ConfirmSignupView,
+    ConfirmEmailNotification,
+    ConfirmEmailSuccess,
 )
 
 app_name = "account"
@@ -41,4 +44,7 @@ urlpatterns = [
         auth_views.PasswordChangeDoneView.as_view(),
         name="password_change_done",
     ),
+    path('confirm-email/<str:user_id>/<str:token>/', ConfirmSignupView.as_view(), name='confirm_email'),
+    path('confirm-email/success/', ConfirmEmailSuccess.as_view(), name="confirm_email_success"),
+    path('confirm-email/noti/', ConfirmEmailNotification.as_view(), name="confirm_email_noti"),
 ]
