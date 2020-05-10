@@ -286,8 +286,7 @@ body {
 /* TESTIMONIAL */
 .testimonial{
   margin-top: 90px;
-
-
+  text-align: center;
 }
 .testimonial h1{
   text-align: center;
@@ -306,8 +305,7 @@ body {
 .testimonial .carousel-item img {
   margin-top: 80px;
   border-radius: 50%;
-  position: relative;
-  left: 300px;
+  display: inline-block;
 }
 .testimonial .carousel-item h3{
   margin-top: 10px;
