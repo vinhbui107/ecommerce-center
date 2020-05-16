@@ -8,7 +8,7 @@ My assignment for Information Security.
 
 * Update users profile.
 
-* Add movie to cart and checkout.
+* Search, add movie to cart and checkout.
 
 * Basic security for website (this is a importaint feature in this project).
 
