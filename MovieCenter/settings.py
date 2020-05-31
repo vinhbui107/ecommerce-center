@@ -191,12 +191,12 @@ RECAPTCHA_PUBLIC_KEY = '6LcS1_QUAAAAAKGogcDJIdM2B-kEs1zR8yjj8jNK'
 # ==============================================================================
 SESSION_COOKIE_AGE = 3600  # one hour
 
-# # Cross site request forgery (CSRF) protection
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+# Cross site request forgery (CSRF) protection
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
-# # Cross-site Scripting (XSS)
-# SECURE_BROWSER_XSS_FILTER = True
-# SECURE_CONTENT_TYPE_NOSNIFF = True
+# Cross-site Scripting (XSS)
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
-# X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
