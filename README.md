@@ -10,7 +10,7 @@ My assignment for Information Security.
 
 * Search, add movie to cart and checkout.
 
-* Basic security for website (this is a importaint feature in this project).
+* Security for website.
 
 ## Third-Party Packages
 
