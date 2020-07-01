@@ -1,6 +1,6 @@
 # Movie Center Website
 
-My assignment for Information Security.
+My assignment for Information Security 🚀.
 
 ## Features
 
