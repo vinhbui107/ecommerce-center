@@ -2,6 +2,8 @@
 
 My assignment for Information Security 🚀.
 
+My intro video about this project. [Watch it](https://www.youtube.com/watch?v=tolvKYo0VjY)
+
 ## Features
 
 * Users login, logout, change password and reset password by their email.
