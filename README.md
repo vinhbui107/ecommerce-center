@@ -2,7 +2,7 @@
 
 My assignment for Information Security 🚀.
 
-My intro video about this project. [Watch it](https://www.youtube.com/watch?v=tolvKYo0VjY).
+Video demo about this project. [Watch it](https://www.youtube.com/watch?v=tolvKYo0VjY).
 
 ## Features
 
