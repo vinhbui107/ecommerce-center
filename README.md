@@ -83,3 +83,7 @@ Load the site at http://127.0.0.1:8000.
 * Pillow 7.0.0
 * sorl-thumbnail 12.6.3
 * django-debug-toolbar 2.2
+
+#### Have fun :)
+
+![Thanks!](https://media.giphy.com/media/l4KibK3JwaVo0CjDO/giphy.gif)
