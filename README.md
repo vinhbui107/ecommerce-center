@@ -26,6 +26,22 @@ Video demo about this project. [Watch it](https://www.youtube.com/watch?v=tolvKY
 * [x] [python-decouple](https://github.com/henriquebastos/python-decouple/) Storing application settings
 * [x] [dj-database-url](https://github.com/jacobian/dj-database-url) Storing application settings
 
+## Tech Specs
+
+* Python 3.8
+* Django 3.0.5
+* dj-database-url 0.5.0
+* django-allauth 0.41.0
+* django-crispy-forms 1.9.0
+* Bootstrap 4.3.1
+* jQuery 3.4.1
+* Font Awesome 5.11.2
+* python-decouple 3.3
+* Pillow 7.0.0
+* sorl-thumbnail 12.6.3
+* django-debug-toolbar 2.2
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -68,21 +84,6 @@ Run our project
 ```
 
 Load the site at http://127.0.0.1:8000.
-
-## Tech Specs
-
-* Python 3.8
-* Django 3.0.5
-* dj-database-url 0.5.0
-* django-allauth 0.41.0
-* django-crispy-forms 1.9.0
-* Bootstrap 4.3.1
-* jQuery 3.4.1
-* Font Awesome 5.11.2
-* python-decouple 3.3
-* Pillow 7.0.0
-* sorl-thumbnail 12.6.3
-* django-debug-toolbar 2.2
 
 #### Have fun :)
 
